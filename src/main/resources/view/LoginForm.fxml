@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="root" prefHeight="526.0" prefWidth="790.0" style="-fx-background-color: #49D1D1;" styleClass="sideAnchorPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginFormController">
+<AnchorPane fx:id="root" prefHeight="526.0" prefWidth="790.0" style="-fx-background-color: #49D1D1;" styleClass="sideAnchorPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
       <AnchorPane id="sideAnchorPane" fx:id="sideAnchorPane" layoutX="395.0" prefHeight="526.0" prefWidth="397.0" style="-fx-border-radius: 20px; -fx-background-color: #FFFFFF;">
          <children>
-            <ImageView fitHeight="42.0" fitWidth="69.0" layoutX="315.0" layoutY="14.0">
+            <ImageView fitHeight="72.0" fitWidth="118.0" layoutX="266.0" layoutY="14.0">
                <image>
                   <Image url="@../img/7570000.jpg" />
                </image>
