@@ -1,58 +1,62 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.JFXTreeTableView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class OrderFormController implements Initializable {
+public class OrderFormController {
 
     @FXML
-    private Button btnDashBoard;
+    private JFXButton btnAddtoCard;
 
     @FXML
-    private Button btnEmployee;
+    private JFXButton btnClear;
 
     @FXML
-    private Button btnInventory;
+    private JFXButton btnPlaceOrder;
 
     @FXML
-    private JFXButton btnLogOut;
+    private JFXComboBox<?> cmbProductID;
 
     @FXML
-    private Button btnOrder;
+    private Label lblNetTotal;
 
     @FXML
-    private Button btnSupplier;
+    private Label lblOrderDate;
 
     @FXML
-    private Label lblEmployeeName;
+    private Label lblOrderID;
 
     @FXML
-    private Label lblEmpoyeeID;
+    private JFXTreeTableView<?> tblAddToCard;
 
     @FXML
-    private BorderPane mainPane;
-
-    private Pane view;
+    private JFXTextField txtCategory;
 
     @FXML
-    void btnOrderOnAction(ActionEvent event) throws IOException {
-        view=new FXMLLoader().load(getClass().getResource("/view/index.fxml"));
-        mainPane.setCenter(view);
+    private JFXTextField txtDiscount;
+
+    @FXML
+    private JFXTextField txtPrice;
+
+    @FXML
+    private JFXTextField txtProductName;
+
+    @FXML
+    private JFXTextField txtQty;
+
+    @FXML
+    void btnAddtoCardOnAction(ActionEvent event) {
+
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    void btnClearOnAction(ActionEvent event) {
 
     }
+
 }

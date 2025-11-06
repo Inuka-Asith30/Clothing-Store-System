@@ -1,6 +1,5 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,9 +11,9 @@ public class Starter extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root= FXMLLoader.load(getClass().getResource("/view/OrderForm.fxml"));
-        Scene scene=new Scene(root);
-        stage.setScene(scene);
+//        Parent root= ;
+//        Scene scene=new Scene(root);
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"))));
         stage.show();
     }
 }
