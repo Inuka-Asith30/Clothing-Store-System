@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root" prefHeight="526.0" prefWidth="790.0" style="-fx-background-color: #49D1D1;" styleClass="sideAnchorPane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginFormController">
+   <children>
+      <AnchorPane id="sideAnchorPane" fx:id="sideAnchorPane" layoutX="395.0" prefHeight="526.0" prefWidth="397.0" style="-fx-border-radius: 20px; -fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="42.0" fitWidth="69.0" layoutX="315.0" layoutY="14.0">
+               <image>
+                  <Image url="@../img/7570000.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="48.0" layoutY="98.0" prefHeight="36.0" prefWidth="111.0" style="-fx-font-style: #FFFFFF;" text="Hello!" textAlignment="CENTER" textFill="#373644">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="48.0" layoutY="125.0" prefHeight="36.0" prefWidth="170.0" style="-fx-font-style: #FFFFFF;" text="Good Morning" textAlignment="CENTER" textFill="#49d1d1">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="191.0" prefHeight="36.0" prefWidth="69.0" style="-fx-font-style: #FFFFFF;" text="Login" textAlignment="CENTER" textFill="#49d1d1">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="152.0" layoutY="191.0" prefHeight="36.0" prefWidth="169.0" style="-fx-font-style: #FFFFFF;" text="Your Account" textAlignment="CENTER" textFill="#373644">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <JFXTextField focusColor="#49d1d1" layoutX="67.0" layoutY="292.0" prefHeight="26.0" prefWidth="244.0" promptText="Enter your Employee Id" unFocusColor="#49d1d1" />
+            <JFXTextField focusColor="#49d1d1" layoutX="67.0" layoutY="347.0" prefHeight="26.0" prefWidth="244.0" promptText="Enter your Password" unFocusColor="#49d1d1" />
+            <Label layoutX="67.0" layoutY="331.0" prefHeight="16.0" prefWidth="49.0" style="-fx-font-style: #FFFFFF;" text="Password" textAlignment="CENTER" textFill="#373644">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="276.0" prefHeight="15.0" prefWidth="134.0" style="-fx-font-style: #FFFFFF;" text="Employee Id" textAlignment="CENTER" textFill="#373644">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="67.0" layoutY="410.0" prefHeight="54.0" prefWidth="256.0" style="-fx-background-color: #49D1D1; -fx-border-radius: 20px;" text="SUBMIT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="58.0" layoutY="135.0" prefHeight="36.0" prefWidth="159.0" style="-fx-font-style: #FFFFFF;" text="Good Morning" textAlignment="CENTER" textFill="#49d1d1">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="195.0" prefHeight="36.0" prefWidth="62.0" style="-fx-font-style: #FFFFFF;" text="Login" textAlignment="CENTER" textFill="#49d1d1">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="189.0" prefHeight="100.0" prefWidth="315.0" style="-fx-font-style: #FFFFFF;" text="Welcome" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="68.0" />
+         </font>
+      </Label>
+      <Label layoutX="109.0" layoutY="269.0" prefHeight="26.0" prefWidth="197.0" style="-fx-font-style: #FFFFFF;" text="Sign in To your Account" textAlignment="JUSTIFY" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="125.0" layoutY="470.0" prefHeight="26.0" prefWidth="134.0" style="-fx-font-style: #FFFFFF;" text="www.fashion.com" textAlignment="JUSTIFY" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
