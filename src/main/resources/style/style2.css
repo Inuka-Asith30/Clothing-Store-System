@@ -1,0 +1,13 @@
+.btnInventory{
+-fx-background-color:#373644;
+
+}
+.btnInventory:hover{
+-fx-background-color:#6d52d1;
+
+}
+.btnInventory:focused
+{
+-fx-background-color:#8400BC;
+}
+
