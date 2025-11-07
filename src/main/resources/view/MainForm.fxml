@@ -19,7 +19,7 @@
             <VBox prefHeight="718.0" prefWidth="208.0" style="-fx-background-color: #373644;" BorderPane.alignment="CENTER">
                <children>
                   <AnchorPane prefHeight="203.0" prefWidth="208.0" />
-                  <Button id="btnDashBoard" fx:id="btnDashBoard" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="208.0" styleClass="btnDashBoard" stylesheets="@style.css" text="Dash Board" textFill="WHITE">
+                  <Button id="btnDashBoard" fx:id="btnDashBoard" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="208.0" styleClass="btnDashBoard" stylesheets="@../style/style.css" text="Dash Board" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -34,7 +34,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btnOrder" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="65.0" prefWidth="208.0" styleClass="btnOrder" stylesheets="@style.css" text="Order" textFill="WHITE">
+                  <Button fx:id="btnOrder" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="65.0" prefWidth="208.0" styleClass="btnOrder" stylesheets="@../style/style.css" text="Order" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0">
                            <image>
@@ -49,7 +49,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="btnInventory" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="208.0" styleClass="btnInventory" stylesheets="@style2.css" text="Inventory" textFill="WHITE">
+                  <Button fx:id="btnInventory" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnInventoryOnAction" prefHeight="62.0" prefWidth="208.0" styleClass="btnInventory" stylesheets="@../style/style2.css" text="Inventory" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -64,7 +64,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="btnEmployee" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="208.0" styleClass="btnEmployee" stylesheets="@style.css" text="Employee" textFill="WHITE">
+                  <Button fx:id="btnEmployee" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="65.0" prefWidth="208.0" styleClass="btnEmployee" stylesheets="@../style/style.css" text="Employee" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -79,7 +79,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="btnSupplier" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="208.0" styleClass="btnSupplier" stylesheets="@style.css" text="Supplier" textFill="WHITE">
+                  <Button fx:id="btnSupplier" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="60.0" prefWidth="208.0" styleClass="btnSupplier" stylesheets="@../style/style.css" text="Supplier" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>

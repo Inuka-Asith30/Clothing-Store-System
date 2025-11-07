@@ -1,12 +1,12 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class OrderFormController {
 
@@ -20,7 +20,10 @@ public class OrderFormController {
     private JFXButton btnPlaceOrder;
 
     @FXML
-    private JFXComboBox<?> cmbProductID;
+    private JFXButton btnPlaceOrder1;
+
+    @FXML
+    private ComboBox<?> cmbProductID;
 
     @FXML
     private Label lblNetTotal;
@@ -35,19 +38,19 @@ public class OrderFormController {
     private JFXTreeTableView<?> tblAddToCard;
 
     @FXML
-    private JFXTextField txtCategory;
+    private TextField txtCategory;
 
     @FXML
-    private JFXTextField txtDiscount;
+    private TextField txtDiscount;
 
     @FXML
-    private JFXTextField txtPrice;
+    private TextField txtPrice;
 
     @FXML
-    private JFXTextField txtProductName;
+    private TextField txtProductName;
 
     @FXML
-    private JFXTextField txtQty;
+    private TextField txtQty;
 
     @FXML
     void btnAddtoCardOnAction(ActionEvent event) {
@@ -56,6 +59,11 @@ public class OrderFormController {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cmbProductIDOnAction(ActionEvent event) {
 
     }
 

@@ -47,7 +47,24 @@ public class MainFormController implements Initializable {
 
     @FXML
     void btnOrderOnAction(ActionEvent event) throws IOException {
-        view=new FXMLLoader().load(getClass().getResourceAsStream("/view/OrderForm.fxml"));
+        view=new FXMLLoader().load(getClass().getResource("/view/OrderForm.fxml"));
+        mainPane.setCenter(view);
+    }
+    @FXML
+    void btnEmployeeOnAction(ActionEvent event) throws IOException {
+        view=new FXMLLoader().load(getClass().getResource("/view/EmployeeForm.fxml"));
+        mainPane.setCenter(view);
+    }
+
+    @FXML
+    void btnInventoryOnAction(ActionEvent event) throws IOException {
+        view=new FXMLLoader().load(getClass().getResource("/view/InventoryForm.fxml"));
+        mainPane.setCenter(view);
+    }
+
+    @FXML
+    void btnSupplierOnAction(ActionEvent event) throws IOException {
+        view=new FXMLLoader().load(getClass().getResource("/view/SupplierForm.fxml"));
         mainPane.setCenter(view);
     }
 

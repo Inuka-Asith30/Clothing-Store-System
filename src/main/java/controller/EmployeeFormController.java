@@ -8,7 +8,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class InventoryFormController {
+public class EmployeeFormController {
 
     @FXML
     private JFXButton btnAdd;
@@ -26,7 +26,7 @@ public class InventoryFormController {
     private JFXButton btnUpdate;
 
     @FXML
-    private ComboBox<?> cmbProductID;
+    private ComboBox<?> cmbEmployeeID;
 
     @FXML
     private Label lblOrderDate;
@@ -35,45 +35,25 @@ public class InventoryFormController {
     private JFXTreeTableView<?> tblInventory;
 
     @FXML
-    private TextField txtCategory;
+    private TextField txtAddress;
 
     @FXML
-    private TextField txtDiscount;
+    private TextField txtDOB;
 
     @FXML
-    private TextField txtPrice;
+    private TextField txtEmployeeName;
 
     @FXML
-    private TextField txtProductName;
+    private TextField txtPassword;
 
     @FXML
-    private TextField txtQty;
+    private TextField txtSalary;
 
     @FXML
     private TextField txtSearch;
 
     @FXML
-    void btnAddOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
     void btnClearOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnDeleteOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnReloadOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnUpdateOnAction(ActionEvent event) {
 
     }
 
