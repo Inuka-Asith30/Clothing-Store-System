@@ -68,8 +68,23 @@ public class MainFormController implements Initializable {
         mainPane.setCenter(view);
     }
 
+    public void btnDashBoardOnAction(ActionEvent actionEvent){
+        dashBoardLoader();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        dashBoardLoader();
     }
+
+    public void dashBoardLoader(){
+        try {
+            view=new FXMLLoader().load(getClass().getResource("/view/DashboardForm.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        mainPane.setCenter(view);
+    }
+
+
 }
