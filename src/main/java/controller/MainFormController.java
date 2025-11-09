@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 
 public class MainFormController implements Initializable {
@@ -72,10 +73,13 @@ public class MainFormController implements Initializable {
         dashBoardLoader();
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dashBoardLoader();
+
     }
+
 
     public void dashBoardLoader(){
         try {
