@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,23 +21,22 @@
             <Font name="System Bold" size="40.0" />
          </font>
       </Label>
-      <JFXTreeTableView fx:id="tblInventory" currentItemsCount="4" layoutX="27.0" layoutY="372.0" prefHeight="258.0" prefWidth="766.0" />
-      <JFXButton fx:id="btnDelete" layoutX="665.0" layoutY="27.0" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+      <JFXButton fx:id="btnDelete" layoutX="665.0" layoutY="27.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnAdd" layoutX="390.0" layoutY="27.0" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Add" textFill="WHITE">
+      <JFXButton fx:id="btnAdd" layoutX="390.0" layoutY="27.0" onAction="#btnAddOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnUpdate" layoutX="529.0" layoutY="27.0" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Update" textFill="WHITE">
+      <JFXButton fx:id="btnUpdate" layoutX="529.0" layoutY="27.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnReload" layoutX="279.0" layoutY="653.0" prefHeight="50.0" prefWidth="222.0" style="-fx-background-color: #49D1D1;" text="Reload" textFill="WHITE">
+      <JFXButton fx:id="btnReload" layoutX="279.0" layoutY="653.0" onAction="#btnReloadOnAction" prefHeight="50.0" prefWidth="222.0" style="-fx-background-color: #49D1D1;" text="Reload" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -119,11 +120,7 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtDOB" prefHeight="36.0" prefWidth="289.0" promptText="DOB" style="-fx-background-color: #e3ffff;">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </TextField>
+                  <DatePicker fx:id="dPDOB" prefHeight="36.0" prefWidth="170.0" style="-fx-background-color: #e3ffff; -fx-border-color: #e3ffff;" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -159,5 +156,15 @@
             </JFXButton>
          </children>
       </AnchorPane>
+      <TableView fx:id="tblEmployee" layoutX="31.0" layoutY="376.0" prefHeight="258.0" prefWidth="758.0">
+        <columns>
+          <TableColumn fx:id="colEmployeeId" prefWidth="88.00000190734863" text="Employee Id" />
+          <TableColumn fx:id="colTitlt" prefWidth="81.59996795654297" text="Title" />
+            <TableColumn fx:id="colName" prefWidth="134.4000244140625" text="Name" />
+            <TableColumn fx:id="colPosition" prefWidth="131.20001220703125" text="Position" />
+            <TableColumn fx:id="colAddress" prefWidth="199.19998168945312" text="Address" />
+            <TableColumn fx:id="colDateOfBirth" prefWidth="128.800048828125" text="Date of brith" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
