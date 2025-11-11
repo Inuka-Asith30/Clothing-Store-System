@@ -1,6 +1,5 @@
 package controller;
 
-import DB.DBConnection;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +13,6 @@ import service.EmployeeService;
 import service.EmployeeServiceImpl;
 
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class EmployeeFormController implements Initializable {
@@ -97,9 +95,34 @@ public class EmployeeFormController implements Initializable {
 
 
     Alert myAlert=new Alert(Alert.AlertType.ERROR);
+    Alert InformationAlert =new Alert(Alert.AlertType.INFORMATION);
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        String employeeId = txtEmployeeId.getText();
+        String employeeName = txtEmployeeName.getText();
+        String email = txtEmail.getText();
+        Double salary = Double.parseDouble(txtSalary.getText());
+        String position = txtPosition.getText();
+        String phoneNumber = txtPhoneNumber.getText();
+        String address = txtAddress.getText();
+        String title = cmbTitle.getValue();
+
+        boolean isAdded=employeeService.addEmployeeDetails(new Employee(employeeId,title,employeeName,salary,address,position,email,phoneNumber));
+
+        if(isAdded){
+            InformationAlert.setContentText("Added is successfully");
+
+            InformationAlert.show();
+
+            loadEmpDetails();
+        }
+        else {
+            InformationAlert.setContentText("Added is not successfully");
+
+            InformationAlert.show();
+        }
+
 
     }
 
@@ -125,7 +148,7 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-
+        loadEmpDetails();
     }
 
     @FXML
@@ -140,6 +163,10 @@ public class EmployeeFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        InformationAlert.setTitle("Information");
+        InformationAlert.setHeaderText("Information");
+
         colEmployeeId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));

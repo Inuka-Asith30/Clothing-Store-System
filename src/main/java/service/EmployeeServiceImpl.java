@@ -15,7 +15,6 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Override
     public ObservableList<Employee> getEmployeeDetails() {
 
-
         ObservableList<Employee> employees= FXCollections.observableArrayList();
 
         ResultSet empDetails = employeeRepository.getEmpDetails();
@@ -30,7 +29,6 @@ public class EmployeeServiceImpl implements EmployeeService{
                                 empDetails.getString("EmpName"),
                                 empDetails.getDouble("Salary"),
                                 empDetails.getString("EmpAddress"),
-                                empDetails.getString("PostalCode"),
                                 empDetails.getString("Position"),
                                 empDetails.getString("Email"),
                                 empDetails.getString("PhoneNumber")
@@ -44,5 +42,10 @@ public class EmployeeServiceImpl implements EmployeeService{
         }
 
 
+    }
+
+    @Override
+    public boolean addEmployeeDetails(Employee employee) {
+        return employeeRepository.addEmpDetails(employee);
     }
 }
