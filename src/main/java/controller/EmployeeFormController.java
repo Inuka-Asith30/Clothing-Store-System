@@ -132,7 +132,7 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void btnNewIdOnAction(ActionEvent event) {
-
+        txtEmployeeId.setText(employeeService.getLastEmployeeID());
     }
 
     @FXML

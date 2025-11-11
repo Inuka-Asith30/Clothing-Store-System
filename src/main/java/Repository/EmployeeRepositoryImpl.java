@@ -83,4 +83,15 @@ public class EmployeeRepositoryImpl implements EmployeeRepository{
 
     }
 
+    @Override
+    public ResultSet getLastEmpID() {
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("select EmpID from employee Order by EmpID DESC LImit 1");
+            return preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

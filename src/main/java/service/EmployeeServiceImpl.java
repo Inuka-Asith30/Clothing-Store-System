@@ -58,4 +58,33 @@ public class EmployeeServiceImpl implements EmployeeService{
     public boolean updateEmloyeeDetails(Employee employee) {
         return employeeRepository.updateEmpDetails(employee);
     }
+
+    @Override
+    public String getLastEmployeeID() {
+        ResultSet resultSet=employeeRepository.getLastEmpID();
+
+        String lastId = null;
+
+        try {
+            while(resultSet.next()){
+                lastId=resultSet.getString("EmpID");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        if(lastId!=null){
+            lastId = lastId.split("[A-Z]")[1];//C060-->060
+            String newId= String.format("C%03d",(Integer.parseInt(lastId)+1));
+
+            return newId;
+        }
+
+        return "C001";
+
+
+    }
+
+
 }
