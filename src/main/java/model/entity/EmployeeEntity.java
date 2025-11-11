@@ -1,5 +1,7 @@
-package model;
+package model.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 
 @NoArgsConstructor
@@ -7,11 +9,13 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @ToString
+@Entity
+public class EmployeeEntity {
 
-public class Employee {
+    @Id
     private String employeeId;
     private String address;
     private String name;
-    private String positon;
+    private String position;
     private String title;
 }
