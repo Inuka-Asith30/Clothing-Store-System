@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -41,7 +40,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <AnchorPane layoutX="31.0" layoutY="100.0" prefHeight="258.0" prefWidth="758.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;">
+      <AnchorPane layoutX="31.0" layoutY="100.0" prefHeight="286.0" prefWidth="758.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;">
          <children>
             <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="483.0" layoutY="15.0">
                <image>
@@ -58,17 +57,21 @@
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <VBox layoutX="19.0" layoutY="71.0" prefHeight="60.0" prefWidth="191.0">
+            <VBox layoutX="19.0" layoutY="74.0" prefHeight="60.0" prefWidth="191.0">
                <children>
                   <Label prefHeight="19.0" prefWidth="73.0" text="Employee ID" textFill="#373644">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="cmbEmployeeID" onAction="#cmbProductIDOnAction" prefHeight="36.0" prefWidth="197.0" style="-fx-background-color: #e3ffff;" />
+                  <TextField fx:id="txtEmployeeId" prefHeight="36.0" prefWidth="212.0" promptText="Employee Id" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
                </children>
             </VBox>
-            <VBox layoutX="210.0" layoutY="71.0" prefHeight="66.0" prefWidth="236.0">
+            <VBox layoutX="210.0" layoutY="71.0" prefHeight="66.0" prefWidth="266.0">
                <children>
                   <Label prefHeight="19.0" prefWidth="100.0" text="Name" textFill="#373644">
                      <font>
@@ -85,7 +88,7 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </VBox>
-            <VBox layoutX="444.0" layoutY="71.0" prefHeight="66.0" prefWidth="294.0">
+            <VBox layoutX="473.0" layoutY="71.0" prefHeight="66.0" prefWidth="265.0">
                <children>
                   <Label prefHeight="19.0" prefWidth="100.0" text="Salary" textFill="#373644">
                      <font>
@@ -99,7 +102,7 @@
                   </TextField>
                </children>
             </VBox>
-            <VBox layoutX="19.0" layoutY="148.0" prefHeight="66.0" prefWidth="191.0">
+            <VBox layoutX="19.0" layoutY="199.0" prefHeight="66.0" prefWidth="540.0">
                <children>
                   <Label prefHeight="19.0" prefWidth="100.0" text="Address" textFill="#373644">
                      <font>
@@ -113,14 +116,18 @@
                   </TextField>
                </children>
             </VBox>
-            <VBox layoutX="210.0" layoutY="148.0" prefHeight="66.0" prefWidth="191.0">
+            <VBox layoutX="210.0" layoutY="133.0" prefHeight="66.0" prefWidth="191.0">
                <children>
-                  <Label prefHeight="19.0" prefWidth="100.0" text="Date Of Birth" textFill="#373644">
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Email" textFill="#373644">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <DatePicker fx:id="dPDOB" prefHeight="36.0" prefWidth="170.0" style="-fx-background-color: #e3ffff; -fx-border-color: #e3ffff;" />
+                  <TextField fx:id="txtEmail" prefHeight="36.0" prefWidth="212.0" promptText="Email" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
                </children>
                <opaqueInsets>
                   <Insets />
@@ -129,14 +136,14 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </VBox>
-            <VBox layoutX="401.0" layoutY="148.0" prefHeight="66.0" prefWidth="191.0">
+            <VBox layoutX="397.0" layoutY="133.0" prefHeight="66.0" prefWidth="198.0">
                <children>
-                  <Label prefHeight="19.0" prefWidth="100.0" text="Password" textFill="#373644">
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Position" textFill="#373644">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtPassword" prefHeight="36.0" prefWidth="289.0" promptText="Password" style="-fx-background-color: #e3ffff;">
+                  <TextField fx:id="txtPosition" prefHeight="36.0" prefWidth="289.0" promptText="Position" style="-fx-background-color: #e3ffff;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -149,21 +156,56 @@
                   <Insets />
                </opaqueInsets>
             </VBox>
-            <JFXButton fx:id="btnClear" layoutX="610.0" layoutY="166.0" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="127.0" style="-fx-background-color: #49D1D1;" text="Clear" textFill="WHITE">
+            <JFXButton fx:id="btnClear" layoutX="610.0" layoutY="210.0" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="127.0" style="-fx-background-color: #49D1D1;" text="Clear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </JFXButton>
+            <VBox layoutX="19.0" layoutY="133.0" prefHeight="66.0" prefWidth="191.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Title" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cmbTitle" prefHeight="36.0" prefWidth="202.0" style="-fx-background-color: #e3ffff;" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox layoutX="601.0" layoutY="133.0" prefHeight="66.0" prefWidth="134.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Phone Number" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPhoneNumber" prefHeight="36.0" prefWidth="289.0" promptText="Phone Number" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
          </children>
       </AnchorPane>
-      <TableView fx:id="tblEmployee" layoutX="31.0" layoutY="376.0" prefHeight="258.0" prefWidth="758.0">
+      <TableView fx:id="tblEmployee" layoutX="31.0" layoutY="400.0" prefHeight="237.0" prefWidth="758.0">
         <columns>
-          <TableColumn fx:id="colEmployeeId" prefWidth="88.00000190734863" text="Employee Id" />
-          <TableColumn fx:id="colTitlt" prefWidth="81.59996795654297" text="Title" />
-            <TableColumn fx:id="colName" prefWidth="134.4000244140625" text="Name" />
-            <TableColumn fx:id="colPosition" prefWidth="131.20001220703125" text="Position" />
-            <TableColumn fx:id="colAddress" prefWidth="199.19998168945312" text="Address" />
-            <TableColumn fx:id="colDateOfBirth" prefWidth="128.800048828125" text="Date of brith" />
+          <TableColumn fx:id="colEmployeeId" prefWidth="77.60003852844238" text="Employee Id" />
+          <TableColumn fx:id="colTitle" prefWidth="56.00005340576172" text="Title" />
+            <TableColumn fx:id="colName" prefWidth="108.0" text="Name" />
+            <TableColumn fx:id="colPosition" prefWidth="96.800048828125" text="Position" />
+            <TableColumn fx:id="colAddress" prefWidth="129.5999755859375" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="112.80007934570312" text="Email" />
+            <TableColumn fx:id="colSalary" prefWidth="80.00006103515625" text="Salary" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="96.7999267578125" text="Phone Number" />
         </columns>
       </TableView>
    </children>
