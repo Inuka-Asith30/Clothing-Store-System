@@ -89,6 +89,10 @@ public class EmployeeFormController implements Initializable {
     @FXML
     private TextField txtSearch;
 
+    @FXML
+    private JFXButton btnNewId;
+
+
     EmployeeService employeeService=new EmployeeServiceImpl();
 
     ObservableList<Employee> employeeDetails= FXCollections.observableArrayList();
@@ -123,6 +127,11 @@ public class EmployeeFormController implements Initializable {
             InformationAlert.show();
         }
 
+
+    }
+
+    @FXML
+    void btnNewIdOnAction(ActionEvent event) {
 
     }
 
@@ -164,6 +173,28 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        String employeeId = txtEmployeeId.getText();
+        String employeeName = txtEmployeeName.getText();
+        String email = txtEmail.getText();
+        Double salary = Double.parseDouble(txtSalary.getText());
+        String position = txtPosition.getText();
+        String phoneNumber = txtPhoneNumber.getText();
+        String address = txtAddress.getText();
+        String title = cmbTitle.getValue();
+
+        boolean isUpdated=employeeService.updateEmloyeeDetails(new Employee(employeeId,title,employeeName,salary,address,position,email,phoneNumber));
+
+        if(isUpdated){
+            InformationAlert.setContentText("Updated is successfully");
+
+            InformationAlert.show();
+            loadEmpDetails();
+        }
+        else{
+            InformationAlert.setContentText("Updated is not successfully");
+
+            InformationAlert.show();
+        }
 
     }
 
@@ -214,6 +245,8 @@ public class EmployeeFormController implements Initializable {
         employeeDetails = employeeService.getEmployeeDetails();
         tblEmployee.setItems(employeeDetails);
     }
+
+
 
 
 

@@ -61,4 +61,26 @@ public class EmployeeRepositoryImpl implements EmployeeRepository{
         }
     }
 
+    @Override
+    public boolean updateEmpDetails(Employee employee) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("UPDATE employee SET Title=?,EmpName=?,Salary=?,EmpAddress=?,Position=?,Email=?,PhoneNumber=? WHERE EmpID=?");
+            preparedStatement.setObject(1,employee.getTitle());
+            preparedStatement.setObject(2,employee.getName());
+            preparedStatement.setObject(3,employee.getSalary());
+            preparedStatement.setObject(4,employee.getAddress());
+            preparedStatement.setObject(5,employee.getPosition());
+            preparedStatement.setObject(6,employee.getEmail());
+            preparedStatement.setObject(7,employee.getPhoneNumber());
+            preparedStatement.setObject(8,employee.getEmployeeId());
+
+            return preparedStatement.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 }
