@@ -7,4 +7,5 @@ import java.sql.ResultSet;
 public interface EmployeeRepository{
     ResultSet getEmpDetails();
     boolean addEmpDetails(Employee employee);
+    boolean deleteEmpDetails(String employeeId);
 }

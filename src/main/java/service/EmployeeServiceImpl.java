@@ -48,4 +48,9 @@ public class EmployeeServiceImpl implements EmployeeService{
     public boolean addEmployeeDetails(Employee employee) {
         return employeeRepository.addEmpDetails(employee);
     }
+
+    @Override
+    public boolean deleteEmployeeDetails(String employeeId) {
+        return employeeRepository.deleteEmpDetails(employeeId);
+    }
 }

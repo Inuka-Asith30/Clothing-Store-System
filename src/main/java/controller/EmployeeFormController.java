@@ -139,11 +139,22 @@ public class EmployeeFormController implements Initializable {
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
 
-        myAlert.setTitle("This is the alert title");
-        myAlert.setHeaderText("This is the header text");
-        myAlert.setContentText("This is the alert content");
+        String employeeId = txtEmployeeId.getText();
 
-        myAlert.show();
+        boolean isDeleted = employeeService.deleteEmployeeDetails(employeeId);
+
+        if(isDeleted){
+            InformationAlert.setContentText("Deleted is successfully");
+            InformationAlert.show();
+
+            loadEmpDetails();
+        }
+        else{
+            InformationAlert.setContentText("Deleted is not successfully");
+
+            InformationAlert.show();
+        }
+
     }
 
     @FXML
