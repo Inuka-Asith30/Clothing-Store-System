@@ -57,7 +57,7 @@
                   <Font name="System Bold" size="27.0" />
                </font>
             </Label>
-            <VBox layoutX="19.0" layoutY="74.0" prefHeight="60.0" prefWidth="191.0">
+            <VBox layoutX="19.0" layoutY="74.0" prefHeight="60.0" prefWidth="118.0">
                <children>
                   <Label prefHeight="19.0" prefWidth="73.0" text="Employee ID" textFill="#373644">
                      <font>
@@ -194,18 +194,23 @@
                   <Insets />
                </opaqueInsets>
             </VBox>
+            <JFXButton fx:id="btnNewId" layoutX="144.0" layoutY="89.0" onAction="#btnNewIdOnAction" prefHeight="43.0" prefWidth="65.0" style="-fx-background-color: #49D1D1;" text="New Id" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <TableView fx:id="tblEmployee" layoutX="31.0" layoutY="400.0" prefHeight="237.0" prefWidth="758.0">
         <columns>
           <TableColumn fx:id="colEmployeeId" prefWidth="77.60003852844238" text="Employee Id" />
-          <TableColumn fx:id="colTitle" prefWidth="56.00005340576172" text="Title" />
-            <TableColumn fx:id="colName" prefWidth="108.0" text="Name" />
-            <TableColumn fx:id="colPosition" prefWidth="96.800048828125" text="Position" />
-            <TableColumn fx:id="colAddress" prefWidth="129.5999755859375" text="Address" />
-            <TableColumn fx:id="colEmail" prefWidth="112.80007934570312" text="Email" />
-            <TableColumn fx:id="colSalary" prefWidth="80.00006103515625" text="Salary" />
-            <TableColumn fx:id="colPhoneNumber" prefWidth="96.7999267578125" text="Phone Number" />
+          <TableColumn fx:id="colTitle" prefWidth="51.19994354248047" text="Title" />
+            <TableColumn fx:id="colName" prefWidth="95.20001220703125" text="Name" />
+            <TableColumn fx:id="colPosition" prefWidth="104.79998779296875" text="Position" />
+            <TableColumn fx:id="colAddress" prefWidth="117.5999755859375" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="127.99996948242188" text="Email" />
+            <TableColumn fx:id="colSalary" prefWidth="87.20001220703125" text="Salary" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="96.0" text="Phone Number" />
         </columns>
       </TableView>
    </children>
