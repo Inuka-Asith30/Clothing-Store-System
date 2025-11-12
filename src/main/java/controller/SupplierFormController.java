@@ -1,13 +1,24 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTreeTableView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.dto.Supplier;
+import service.Impl.SupplierServiceImpl;
+import service.SupplierService;
 
-public class SupplierFormController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class SupplierFormController implements Initializable {
 
     @FXML
     private JFXButton btnAdd;
@@ -19,33 +30,108 @@ public class SupplierFormController {
     private JFXButton btnDelete;
 
     @FXML
+    private JFXButton btnNewId;
+
+    @FXML
     private JFXButton btnReload;
 
     @FXML
     private JFXButton btnUpdate;
 
     @FXML
-    private JFXComboBox<?> cmbProductID;
+    private TableColumn<?, ?> colAddress;
 
     @FXML
-    private Label lblOrderDate;
+    private TableColumn<?, ?> colEmail;
 
     @FXML
-    private JFXTreeTableView<?> tblInventory;
+    private TableColumn<?, ?> colName;
 
     @FXML
-    private JFXTextField txtCategory;
+    private TableColumn<?, ?> colPhoneNumber;
 
     @FXML
-    private JFXTextField txtDiscount;
+    private TableColumn<?, ?> colSupplierId;
 
     @FXML
-    private JFXTextField txtPrice;
+    private Label lblOrderDate1;
 
     @FXML
-    private JFXTextField txtProductName;
+    private TableView<Supplier> tblSupplier;
 
     @FXML
-    private JFXTextField txtQty;
+    private TextField txtAddress;
 
+    @FXML
+    private TextField txtEmail;
+
+    @FXML
+    private TextField txtPhoneNumber;
+
+    @FXML
+    private TextField txtSearch;
+
+    @FXML
+    private TextField txtSupplierId;
+
+    @FXML
+    private TextField txtSupplierName;
+
+    ObservableList<Supplier> supplierObservableList= FXCollections.observableArrayList();
+
+    @FXML
+    void btnAddOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnClearOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnDeleteOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnNewIdOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnReloadOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnUpdateOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void txtSearchOnAction(ActionEvent event) {
+
+    }
+
+    SupplierService supplierService=new SupplierServiceImpl();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+
+        loadSupplierdetails();
+    }
+
+    private void loadSupplierdetails() {
+
+        supplierObservableList.clear();
+        supplierObservableList=supplierService.getAllDetails();
+        tblSupplier.setItems(supplierObservableList);
+    }
 }
