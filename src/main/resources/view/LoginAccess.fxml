@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="477.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginAccessFormController">
+   <children>
+      <Label layoutX="37.0" layoutY="29.0" prefHeight="66.0" prefWidth="252.0" text="Login Access" textFill="#373644">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnDelete" layoutX="675.0" layoutY="37.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnAdd" layoutX="400.0" layoutY="37.0" onAction="#btnAddOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" layoutX="539.0" layoutY="37.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="473.0" layoutY="142.0" prefHeight="280.0" prefWidth="338.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;">
+         <children>
+            <VBox layoutX="19.0" layoutY="36.0" prefHeight="60.0" prefWidth="307.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="73.0" text="Employee ID" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtEmployeeId" prefHeight="36.0" prefWidth="212.0" promptText="Employee Id" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="19.0" layoutY="123.0" prefHeight="66.0" prefWidth="307.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Password" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPassword" prefHeight="36.0" prefWidth="212.0" promptText="Password" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <JFXButton fx:id="btnClear" layoutX="196.0" layoutY="210.0" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="127.0" style="-fx-background-color: #49D1D1;" text="Clear" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TableView layoutX="37.0" layoutY="135.0" prefHeight="293.0" prefWidth="382.0">
+        <columns>
+          <TableColumn prefWidth="182.3999900817871" text="Empolyee Id" />
+          <TableColumn prefWidth="198.40003967285156" text="Password" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
