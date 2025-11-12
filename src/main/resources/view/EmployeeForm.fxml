@@ -35,7 +35,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnReload" layoutX="279.0" layoutY="653.0" onAction="#btnReloadOnAction" prefHeight="50.0" prefWidth="222.0" style="-fx-background-color: #49D1D1;" text="Reload" textFill="WHITE">
+      <JFXButton fx:id="btnReload" layoutX="639.0" layoutY="652.0" onAction="#btnReloadOnAction" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #49D1D1;" text="Reload" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -213,5 +213,10 @@
             <TableColumn fx:id="colPhoneNumber" prefWidth="96.0" text="Phone Number" />
         </columns>
       </TableView>
+      <JFXButton fx:id="btnLoginAccess" layoutX="31.0" layoutY="653.0" onAction="#btnLoginAccessOnAction" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #49D1D1;" text="Login Access" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
