@@ -1,7 +1,7 @@
-package Repository;
+package Repository.Impl;
 
 import DB.DBConnection;
-import javafx.collections.ObservableList;
+import Repository.EmployeeRepository;
 import model.dto.Employee;
 
 import java.sql.Connection;
@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EmployeeRepositoryImpl implements EmployeeRepository{
+public class EmployeeRepositoryImpl implements EmployeeRepository {
     @Override
     public ResultSet getEmpDetails() {
 

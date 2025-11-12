@@ -1,15 +1,16 @@
-package service;
+package service.Impl;
 
 import Repository.EmployeeRepository;
-import Repository.EmployeeRepositoryImpl;
+import Repository.Impl.EmployeeRepositoryImpl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.dto.Employee;
+import service.EmployeeService;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
 
     EmployeeRepository employeeRepository=new EmployeeRepositoryImpl();
     @Override
