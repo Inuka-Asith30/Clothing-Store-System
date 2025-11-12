@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.Supplier;
 import service.Impl.SupplierServiceImpl;
@@ -77,21 +74,57 @@ public class SupplierFormController implements Initializable {
     @FXML
     private TextField txtSupplierName;
 
+    Alert informationAlert =new Alert(Alert.AlertType.INFORMATION);
+
     ObservableList<Supplier> supplierObservableList= FXCollections.observableArrayList();
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        String supplierIdText = txtSupplierId.getText();
+        String addressText = txtAddress.getText();
+        String emailText = txtEmail.getText();
+        String nameText = txtSupplierName.getText();
+        String phoneNumberText = txtPhoneNumber.getText();
 
+        boolean isAdded=supplierService.addSupplierDetails(new Supplier(supplierIdText,nameText,addressText,emailText,phoneNumberText));
+
+        if(isAdded){
+            informationAlert.setContentText("Added is successfully");
+            informationAlert.show();
+
+            loadSupplierdetails();
+        }
+        else{
+            informationAlert.setContentText("Added is not successfully");
+            informationAlert.show();
+        }
     }
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        txtSupplierName.setText(null);
+        txtSupplierId.setText(null);
+        txtPhoneNumber.setText(null);
+        txtEmail.setText(null);
+        txtAddress.setText(null);
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        String supplierIdText = txtSupplierId.getText();
 
+        boolean isDeleted = supplierService.deleteSupplierDetails(supplierIdText);
+
+        if(isDeleted){
+            informationAlert.setContentText("Deleted is successfully");
+            informationAlert.show();
+
+            loadSupplierdetails();
+        }
+        else{
+            informationAlert.setContentText("Deleted is not successfully");
+            informationAlert.show();
+        }
     }
 
     @FXML
@@ -101,12 +134,30 @@ public class SupplierFormController implements Initializable {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-
+        loadSupplierdetails();
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
 
+        String supplierIdText = txtSupplierId.getText();
+        String addressText = txtAddress.getText();
+        String emailText = txtEmail.getText();
+        String nameText = txtSupplierName.getText();
+        String phoneNumberText = txtPhoneNumber.getText();
+
+        boolean isUpdated=supplierService.updateSupplierDetails(new Supplier(supplierIdText,nameText,addressText,emailText,phoneNumberText));
+
+        if(isUpdated){
+            informationAlert.setContentText("Updated is successfully");
+            informationAlert.show();
+
+            loadSupplierdetails();
+        }
+        else{
+            informationAlert.setContentText("Updated is not successfully");
+            informationAlert.show();
+        }
     }
 
     @FXML
@@ -119,6 +170,10 @@ public class SupplierFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        informationAlert.setTitle("Information");
+        informationAlert.setHeaderText("Information");
+
+
         colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
@@ -126,6 +181,23 @@ public class SupplierFormController implements Initializable {
         colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
 
         loadSupplierdetails();
+
+        tblSupplier.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) ->{
+            if(newValue!=null){
+                setSelectedValue(newValue);
+
+            }
+        }));
+    }
+
+    private void setSelectedValue(Supplier newValue) {
+
+        txtSupplierId.setText(newValue.getSupplierId());
+        txtAddress.setText(newValue.getAddress());
+        txtEmail.setText(newValue.getEmail());
+        txtSupplierName.setText(newValue.getName());
+        txtPhoneNumber.setText(newValue.getPhoneNumber());
+
     }
 
     private void loadSupplierdetails() {
@@ -134,4 +206,6 @@ public class SupplierFormController implements Initializable {
         supplierObservableList=supplierService.getAllDetails();
         tblSupplier.setItems(supplierObservableList);
     }
+
+
 }

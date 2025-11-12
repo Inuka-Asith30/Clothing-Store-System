@@ -41,4 +41,19 @@ public class SupplierServiceImpl implements SupplierService {
         }
 
     }
+
+    @Override
+    public boolean addSupplierDetails(Supplier supplier) {
+        return supplierRepository.addDetails(supplier);
+    }
+
+    @Override
+    public boolean updateSupplierDetails(Supplier supplier) {
+        return supplierRepository.updateDetails(supplier);
+    }
+
+    @Override
+    public boolean deleteSupplierDetails(String supplierId) {
+        return supplierRepository.deleteDetails(supplierId);
+    }
 }
