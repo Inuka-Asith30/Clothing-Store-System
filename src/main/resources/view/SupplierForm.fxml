@@ -60,7 +60,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </TextField>
-            <Label fx:id="lblOrderDate1" layoutX="19.0" layoutY="7.0" prefHeight="49.0" prefWidth="329.0" text="27/08/2025" textFill="#373644">
+            <Label fx:id="lblDate" layoutX="19.0" layoutY="7.0" prefHeight="49.0" prefWidth="329.0" text="27/08/2025" textFill="#373644">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
