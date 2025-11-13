@@ -86,18 +86,31 @@ public class ProductFormController implements Initializable {
     ObservableList<Product> productObservableList = FXCollections.observableArrayList();
     ProductService productService=new ProductServiceImpl();
 
+    Alert informationAlert =new Alert(Alert.AlertType.INFORMATION);
+
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
         String productIdText = txtProductId.getText();
         String nameText = txtProductName.getText();
-        String discountText = txtPackSize.getText();
-        String qtyText = txtQty.getText();
-        String priceText = txtPrice.getText();
+        String packSizeText = txtPackSize.getText();
+        Integer qtyText = Integer.parseInt(txtQty.getText());
+        Double priceText = Double.parseDouble(txtPrice.getText());
         String supplierIdText = txtSupplierId.getText();
         String categoryValue = cmbCategory.getValue();
 
+        boolean isAdded=productService.addDetails(new Product(supplierIdText,productIdText,nameText,categoryValue,packSizeText,priceText,qtyText));
 
+        if(isAdded){
+            informationAlert.setContentText("Added is successfully");
+            informationAlert.show();
+
+            loadProductDetails();
+        }
+        else{
+            informationAlert.setContentText("Added is not successfully");
+            informationAlert.show();
+        }
 
     }
 
@@ -137,11 +150,32 @@ public class ProductFormController implements Initializable {
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
 
-        loadInventoryDetails();
+        loadProductDetails();
+
+        tblProduct.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) ->{
+            if(newValue!=null){
+                setSelectedValue(newValue);
+
+            }
+        }));
+
+        lblDate.setText(GetDate.getDate());
 
     }
 
-    private void loadInventoryDetails() {
+    private void setSelectedValue(Product newValue) {
+
+        txtProductId.setText(newValue.getProductId());
+        txtProductName.setText(newValue.getProductName());
+        txtPackSize.setText(newValue.getPackSize());
+        txtQty.setText(String.valueOf(newValue.getQtyOnHand()));
+        txtPrice.setText(String.valueOf(newValue.getUnitPrice()));
+        txtSupplierId.setText(newValue.getSupplierId());
+        cmbCategory.setValue(newValue.getCategory());
+
+    }
+
+    private void loadProductDetails() {
         productObservableList.clear();
         productObservableList=productService.getAllDetails();
         tblProduct.setItems(productObservableList);
