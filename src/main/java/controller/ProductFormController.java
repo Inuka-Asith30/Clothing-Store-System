@@ -116,7 +116,13 @@ public class ProductFormController implements Initializable {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        txtProductId.setText(null);
+        txtProductName.setText(null);
+        txtPackSize.setText(null);
+        txtQty.setText(null);
+        txtPrice.setText(null);
+        txtSupplierId.setText(null);
+        cmbCategory.setValue(null);
     }
 
     @FXML
@@ -151,6 +157,20 @@ public class ProductFormController implements Initializable {
         Double priceText = Double.parseDouble(txtPrice.getText());
         String supplierIdText = txtSupplierId.getText();
         String categoryValue = cmbCategory.getValue();
+
+        boolean isUpdated=productService.updateDetails(new Product(supplierIdText,productIdText,nameText,categoryValue,packSizeText,priceText,qtyText));
+
+        if(isUpdated){
+            informationAlert.setContentText("Updated is successfully");
+            informationAlert.show();
+
+            loadProductDetails();
+        }
+        else{
+            informationAlert.setContentText("Updated is not successfully");
+            informationAlert.show();
+        }
+
     }
 
     @FXML

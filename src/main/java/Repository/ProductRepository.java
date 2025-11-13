@@ -8,4 +8,5 @@ public interface ProductRepository {
     ResultSet getAllDetails();
     boolean addDetails(Product product);
     boolean deleteDetails(String productId);
+    boolean updateDetails(Product product);
 }

@@ -55,4 +55,25 @@ public class ProductRepositoryImpl implements ProductRepository {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public boolean updateDetails(Product product) {
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE product SET SupplierId=?,ProductName=?,Category=?,PackSize=?,UnitPrice=?,QtyOnHand=? WHERE ProductId=?");
+
+            preparedStatement.setObject(1,product.getSupplierId());
+            preparedStatement.setObject(2,product.getProductName());
+            preparedStatement.setObject(3,product.getCategory());
+            preparedStatement.setObject(4,product.getPackSize());
+
+            preparedStatement.setObject(5,product.getUnitPrice());
+            preparedStatement.setObject(6,product.getQtyOnHand());
+            preparedStatement.setObject(7,product.getProductId());
+
+            return preparedStatement.executeUpdate()>0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

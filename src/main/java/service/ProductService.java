@@ -7,4 +7,5 @@ public interface ProductService {
     ObservableList<Product> getAllDetails();
     boolean addDetails(Product product);
     boolean deleteDetails(String productId);
+    boolean updateDetails(Product product);
 }
