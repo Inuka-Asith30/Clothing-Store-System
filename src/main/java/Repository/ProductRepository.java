@@ -7,4 +7,5 @@ import java.sql.ResultSet;
 public interface ProductRepository {
     ResultSet getAllDetails();
     boolean addDetails(Product product);
+    boolean deleteDetails(String productId);
 }

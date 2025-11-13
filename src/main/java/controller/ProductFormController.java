@@ -121,7 +121,20 @@ public class ProductFormController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        String productIdText = txtProductId.getText();
 
+        boolean deleted = productService.deleteDetails(productIdText);
+
+        if(deleted){
+            informationAlert.setContentText("deleted is successfully");
+            informationAlert.show();
+
+            loadProductDetails();
+        }
+        else{
+            informationAlert.setContentText("deleted is not successfully");
+            informationAlert.show();
+        }
     }
 
     @FXML
@@ -131,7 +144,13 @@ public class ProductFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-
+        String productIdText = txtProductId.getText();
+        String nameText = txtProductName.getText();
+        String packSizeText = txtPackSize.getText();
+        Integer qtyText = Integer.parseInt(txtQty.getText());
+        Double priceText = Double.parseDouble(txtPrice.getText());
+        String supplierIdText = txtSupplierId.getText();
+        String categoryValue = cmbCategory.getValue();
     }
 
     @FXML

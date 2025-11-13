@@ -45,4 +45,9 @@ public class ProductServiceImpl implements ProductService {
     public boolean addDetails(Product product) {
         return productRepository.addDetails(product);
     }
+
+    @Override
+    public boolean deleteDetails(String productId) {
+        return productRepository.deleteDetails(productId);
+    }
 }

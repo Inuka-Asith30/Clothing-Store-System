@@ -6,4 +6,5 @@ import model.dto.Product;
 public interface ProductService {
     ObservableList<Product> getAllDetails();
     boolean addDetails(Product product);
+    boolean deleteDetails(String productId);
 }
