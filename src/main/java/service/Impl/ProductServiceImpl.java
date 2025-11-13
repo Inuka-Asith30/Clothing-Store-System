@@ -40,4 +40,9 @@ public class ProductServiceImpl implements ProductService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public boolean addDetails(Product product) {
+        return productRepository.addDetails(product);
+    }
 }

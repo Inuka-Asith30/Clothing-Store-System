@@ -248,6 +248,8 @@ public class EmployeeFormController implements Initializable {
 
             }
         }));
+
+        lblOrderDate.setText(GetDate.getDate());
     }
 
     private void setSelectedValue(Employee newValue) {

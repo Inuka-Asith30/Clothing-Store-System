@@ -74,6 +74,9 @@ public class SupplierFormController implements Initializable {
     @FXML
     private TextField txtSupplierName;
 
+    @FXML
+    private Label lblDate;
+
     Alert informationAlert =new Alert(Alert.AlertType.INFORMATION);
 
     ObservableList<Supplier> supplierObservableList= FXCollections.observableArrayList();
@@ -188,6 +191,8 @@ public class SupplierFormController implements Initializable {
 
             }
         }));
+
+        lblDate.setText(GetDate.getDate());
     }
 
     private void setSelectedValue(Supplier newValue) {
