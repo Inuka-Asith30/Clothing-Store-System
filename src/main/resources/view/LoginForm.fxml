@@ -15,7 +15,7 @@
    <children>
       <AnchorPane id="sideAnchorPane" fx:id="sideAnchorPane" layoutX="395.0" prefHeight="526.0" prefWidth="397.0" style="-fx-border-radius: 20px; -fx-background-color: #FFFFFF;">
          <children>
-            <ImageView fitHeight="72.0" fitWidth="118.0" layoutX="266.0" layoutY="14.0">
+            <ImageView fitHeight="79.0" fitWidth="122.0" layoutX="262.0" layoutY="14.0">
                <image>
                   <Image url="@../img/img_7.png" />
                </image>
@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnSubmit" layoutX="89.0" layoutY="428.0" onAction="#btnSubmitOnAction" prefHeight="54.0" prefWidth="220.0" style="-fx-background-color: #49D1D1; -fx-border-radius: 40px;" text="SUBMIT" textFill="WHITE">
+            <JFXButton fx:id="btnSubmit" layoutX="89.0" layoutY="428.0" onAction="#btnSubmitOnAction" prefHeight="54.0" prefWidth="220.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 20px;" text="SUBMIT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -55,7 +55,7 @@
                         <Insets bottom="5.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="txtEmployeeId" prefHeight="80.0" prefWidth="256.0" promptText="Enter your Employee ID" style="-fx-background-color: #e3ffff;">
+                  <TextField fx:id="txtEmployeeId" prefHeight="80.0" prefWidth="256.0" promptText="Enter your Employee ID" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -68,7 +68,7 @@
                         <Insets bottom="5.0" top="10.0" />
                      </padding>
                   </Label>
-                  <PasswordField fx:id="txtPassword" prefHeight="80.0" prefWidth="279.0" promptText="Enter your Passowrd" style="-fx-background-color: #e3ffff;">
+                  <PasswordField fx:id="txtPassword" prefHeight="80.0" prefWidth="279.0" promptText="Enter your Passowrd" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
