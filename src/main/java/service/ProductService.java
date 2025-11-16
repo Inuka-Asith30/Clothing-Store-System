@@ -8,4 +8,5 @@ public interface ProductService {
     boolean addDetails(Product product);
     boolean deleteDetails(String productId);
     boolean updateDetails(Product product);
+    Product searchProduct(String productId);
 }

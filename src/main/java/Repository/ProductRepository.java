@@ -9,4 +9,5 @@ public interface ProductRepository {
     boolean addDetails(Product product);
     boolean deleteDetails(String productId);
     boolean updateDetails(Product product);
+    ResultSet searchProduct(String productId);
 }

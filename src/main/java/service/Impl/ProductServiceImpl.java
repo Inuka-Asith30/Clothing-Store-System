@@ -55,4 +55,28 @@ public class ProductServiceImpl implements ProductService {
     public boolean updateDetails(Product product) {
         return productRepository.updateDetails(product);
     }
+
+    @Override
+    public Product searchProduct(String productId) {
+        ResultSet resultSet = productRepository.searchProduct(productId);
+
+        Product product=null;
+        try {
+            while(resultSet.next()){
+                product=new Product(
+                        resultSet.getString("SupplierId"),
+                        resultSet.getString("ProductId"),
+                        resultSet.getString("ProductName"),
+                        resultSet.getString("Category"),
+                        resultSet.getString("PackSize"),
+                        resultSet.getDouble("UnitPrice"),
+                        resultSet.getInt("QtyOnHand")
+                );
+            }
+
+            return product;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

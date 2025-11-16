@@ -76,4 +76,17 @@ public class ProductRepositoryImpl implements ProductRepository {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public ResultSet searchProduct(String productId) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("select * from product where ProductId=?");
+            preparedStatement.setObject(1,productId);
+
+            return preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
