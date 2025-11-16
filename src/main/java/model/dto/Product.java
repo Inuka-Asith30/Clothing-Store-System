@@ -8,11 +8,11 @@ import lombok.*;
 @Setter
 @Getter
 public class Product {
-    private String SupplierId;
-    private String ProductId;
-    private String ProductName;
-    private String Category;
-    private String PackSize;
+    private String supplierId;
+    private String productId;
+    private String productName;
+    private String category;
+    private String packSize;
     private Double unitPrice;
     private Integer qtyOnHand;
 }
