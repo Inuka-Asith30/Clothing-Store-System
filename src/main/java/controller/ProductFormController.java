@@ -181,11 +181,11 @@ public class ProductFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("SupplierId"));
-        colProductId.setCellValueFactory(new PropertyValueFactory<>("ProductId"));
-        colProductName.setCellValueFactory(new PropertyValueFactory<>("ProductName"));
-        colCategory.setCellValueFactory(new PropertyValueFactory<>("Category"));
-        colPackSize.setCellValueFactory(new PropertyValueFactory<>("PackSize"));
+        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
+        colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
+        colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        colCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
+        colPackSize.setCellValueFactory(new PropertyValueFactory<>("packSize"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
 
