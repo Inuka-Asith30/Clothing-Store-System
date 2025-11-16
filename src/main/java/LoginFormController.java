@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -42,6 +43,8 @@ public class LoginFormController implements Initializable {
     Stage mainFormStage=new Stage();
     Starter starter=new Starter();
 
+    Alert ErrorAlert =new Alert(Alert.AlertType.ERROR);
+
     LoginFormService loginFormService=new LoginFormServiceImpl();
 
     @FXML
@@ -56,10 +59,20 @@ public class LoginFormController implements Initializable {
                 mainFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"))));
                 mainFormStage.show();
                 mainFormStage.setResizable(false);
+
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
 
+        }
+        else{
+            ErrorAlert.setContentText("Invaild Login");
+
+            ErrorAlert.show();
+
+            txtEmployeeId.setText(null);
+            txtPassword.setText(null);
         }
     }
 
