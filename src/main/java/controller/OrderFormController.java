@@ -13,6 +13,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.AddToCard;
+import model.dto.Product;
+import service.Impl.OrderServiceImpl;
+import service.OrderService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -81,6 +84,8 @@ public class OrderFormController implements Initializable {
 
     ObservableList<AddToCard> addToCardObservableList= FXCollections.observableArrayList();
 
+    OrderService orderService=new OrderServiceImpl();
+
     @FXML
     void btnAddtoCardOnAction(ActionEvent event) {
         String productIDValue = cmbProductID.getValue();
@@ -106,11 +111,20 @@ public class OrderFormController implements Initializable {
 
     @FXML
     void cmbCategoryOnAction(ActionEvent event) {
+        String categoryValue = cmbCategory.getValue();
 
+        cmbProductID.setItems(orderService.getProductsId(categoryValue));
     }
 
     @FXML
     void cmbProductIDOnAction(ActionEvent event) {
+        String productIDValue = cmbProductID.getValue();
+
+        Product product=orderService.searchProduct(productIDValue);
+
+        txtProductName.setText(product.getProductName());
+        txtPrice.setText(String.valueOf(product.getUnitPrice()));
+
 
     }
 
@@ -124,5 +138,9 @@ public class OrderFormController implements Initializable {
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
         lblOrderDate.setText(GetDate.getDate());
+
+        ObservableList<String>  categoryList=FXCollections.observableArrayList("Grocery","Beverages","Household","Vegetables","Fruits");
+
+        cmbCategory.setItems(categoryList);
     }
 }
