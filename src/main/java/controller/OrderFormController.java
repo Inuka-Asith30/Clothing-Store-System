@@ -6,18 +6,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.AddToCard;
+import model.dto.Orders;
 import model.dto.Product;
 import service.Impl.OrderServiceImpl;
 import service.OrderService;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class OrderFormController implements Initializable {
@@ -82,9 +80,13 @@ public class OrderFormController implements Initializable {
     @FXML
     private TextField txtQty;
 
+    Double netTotal=0.0;
+
     ObservableList<AddToCard> addToCardObservableList= FXCollections.observableArrayList();
 
     OrderService orderService=new OrderServiceImpl();
+
+    Alert InformationAlert =new Alert(Alert.AlertType.INFORMATION);
 
     @FXML
     void btnAddtoCardOnAction(ActionEvent event) {
@@ -97,7 +99,15 @@ public class OrderFormController implements Initializable {
 
         addToCardObservableList.add(new AddToCard(productIDValue,nameText,categoryValue,priceText,qtyText,discountText));
 
+
+        netTotal=netTotal+(priceText*qtyText);
+
+        lblNetTotal.setText(String.valueOf(netTotal));
+
         loadAddtoCardTable();
+
+
+
     }
 
     private void loadAddtoCardTable() {
@@ -114,6 +124,12 @@ public class OrderFormController implements Initializable {
         String categoryValue = cmbCategory.getValue();
 
         cmbProductID.setItems(orderService.getProductsId(categoryValue));
+
+    }
+
+    private void clearTable() {
+        addToCardObservableList.clear();
+        tblAddToCard.setItems(addToCardObservableList);
     }
 
     @FXML
@@ -127,6 +143,36 @@ public class OrderFormController implements Initializable {
 
 
     }
+
+    @FXML
+    void btnPlaceOrderOnAction(ActionEvent event) {
+
+
+        String orderIDText = lblOrderID.getText();
+        LocalDate localDate = LocalDate.parse(lblOrderDate.getText());
+        String orderStatus="Preparing";
+
+        Orders orders=new Orders(orderIDText,localDate,orderStatus);
+
+        boolean isAdded=orderService.addOrder(orders,addToCardObservableList);
+
+        if(isAdded){
+            InformationAlert.setContentText("Added is successfully");
+
+            InformationAlert.show();
+
+            lblOrderID.setText(orderService.getNewOrderId());
+            clearTable();
+        }
+        else{
+            InformationAlert.setContentText("Added is not successfully");
+
+            InformationAlert.show();
+        }
+
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -142,5 +188,11 @@ public class OrderFormController implements Initializable {
         ObservableList<String>  categoryList=FXCollections.observableArrayList("Grocery","Beverages","Household","Vegetables","Fruits");
 
         cmbCategory.setItems(categoryList);
+
+        lblOrderID.setText(orderService.getNewOrderId());
+
+        txtProductName.setEditable(false);
+        txtPrice.setEditable(false);
+
     }
 }
