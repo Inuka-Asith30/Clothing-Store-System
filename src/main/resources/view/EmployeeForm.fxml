@@ -52,7 +52,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </TextField>
-            <Label fx:id="lblOrderDate" layoutX="19.0" layoutY="7.0" prefHeight="49.0" prefWidth="329.0" text="27/08/2025" textFill="#373644">
+            <Label fx:id="lblOrderDate" layoutX="19.0" layoutY="7.0" prefHeight="50.0" prefWidth="164.0" text="27/08/2025" textFill="#373644">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
@@ -194,7 +194,7 @@
                   <Insets />
                </opaqueInsets>
             </VBox>
-            <JFXButton fx:id="btnNewId" layoutX="144.0" layoutY="89.0" onAction="#btnNewIdOnAction" prefHeight="43.0" prefWidth="65.0" style="-fx-background-color: #49D1D1;" text="New Id" textFill="WHITE">
+            <JFXButton fx:id="btnNewId" layoutX="146.0" layoutY="93.0" onAction="#btnNewIdOnAction" prefHeight="36.0" prefWidth="63.0" style="-fx-background-color: #49D1D1;" text="New Id" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -213,7 +213,7 @@
             <TableColumn fx:id="colPhoneNumber" prefWidth="96.0" text="Phone Number" />
         </columns>
       </TableView>
-      <JFXButton fx:id="btnLoginAccess" layoutX="31.0" layoutY="653.0" onAction="#btnLoginAccessOnAction" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #49D1D1;" text="Login Access" textFill="WHITE">
+      <JFXButton fx:id="btnLoginAccess" layoutX="31.0" layoutY="653.0" onAction="#btnLoginAccessOnAction" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #49D1D1;" text="System Access" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
