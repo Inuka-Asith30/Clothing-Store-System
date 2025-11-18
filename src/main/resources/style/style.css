@@ -1,6 +1,7 @@
 .btnDashBoard
 {
 -fx-background-color:#373644;
+-fx-background-radius:20px 0px 0px 20px;
 
 }
 .btnDashBoard:hover
@@ -14,6 +15,8 @@
 }
 .btnOrder{
 -fx-background-color:#373644;
+-fx-background-radius:20px 0px 0px 20px;
+
 
 }
 .btnOrder:hover{
@@ -26,6 +29,8 @@
 }
 .btnEmployee{
 -fx-background-color:#373644;
+-fx-background-radius:20px 0px 0px 20px;
+
 
 }
 .btnEmployee:hover{
@@ -38,6 +43,8 @@
 }
 .btnSupplier{
 -fx-background-color:#373644;
+-fx-background-radius:20px 0px 0px 20px;
+
 
 }
 .btnSupplier:hover{
