@@ -8,5 +8,7 @@ public interface EmployeeService {
     boolean addEmployeeDetails(Employee employee);
     boolean deleteEmployeeDetails(String employeeId);
     boolean updateEmloyeeDetails(Employee employee);
+    Employee searchEmployee(String employeeId);
     String getLastEmployeeID();
+
 }

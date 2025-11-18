@@ -9,5 +9,6 @@ public interface EmployeeRepository{
     boolean addEmpDetails(Employee employee);
     boolean deleteEmpDetails(String employeeId);
     boolean updateEmpDetails(Employee employee);
+    ResultSet searchEmployee(String empId);
     ResultSet getLastEmpID();
 }

@@ -84,6 +84,20 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
+    public ResultSet searchEmployee(String empId) {
+
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("select * from employee where EmpID=?");
+            preparedStatement.setObject(1,empId);
+            return preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    @Override
     public ResultSet getLastEmpID() {
         try {
             Connection connection=DBConnection.getInstance().getConnection();

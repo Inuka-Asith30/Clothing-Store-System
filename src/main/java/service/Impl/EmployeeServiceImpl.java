@@ -61,6 +61,34 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Employee searchEmployee(String employeeId) {
+
+        ResultSet resultSet = employeeRepository.searchEmployee(employeeId);
+
+        Employee employee=null;
+
+        try {
+            while(resultSet.next()){
+                employee=new Employee(
+                        resultSet.getString("EmpID"),
+                        resultSet.getString("Title"),
+                        resultSet.getString("EmpName"),
+                        resultSet.getDouble("Salary"),
+                        resultSet.getString("EmpAddress"),
+                        resultSet.getString("Position"),
+                        resultSet.getString("Email"),
+                        resultSet.getString("PhoneNumber")
+                );
+            }
+
+            return employee;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public String getLastEmployeeID() {
         ResultSet resultSet=employeeRepository.getLastEmpID();
 
