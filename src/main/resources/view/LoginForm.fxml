@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnSubmit" layoutX="89.0" layoutY="428.0" onAction="#btnSubmitOnAction" prefHeight="54.0" prefWidth="220.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 20px;" text="SUBMIT" textFill="WHITE">
+            <JFXButton fx:id="btnSubmit" layoutX="60.0" layoutY="430.0" onAction="#btnSubmitOnAction" prefHeight="54.0" prefWidth="279.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 30px;" text="SUBMIT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
