@@ -142,7 +142,7 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void btnNewIdOnAction(ActionEvent event) {
-        txtEmployeeId.setText(employeeService.getLastEmployeeID());
+        txtEmployeeId.setText(employeeService.getNewEmployeeID());
     }
 
     @FXML
@@ -152,7 +152,9 @@ public class EmployeeFormController implements Initializable {
         txtPosition.setText(null);
         txtEmail.setText(null);
         txtSalary.setText(null);
-
+        txtPhoneNumber.setText(null);
+        cmbTitle.setValue(null);
+        txtEmployeeId.setText(null);
     }
 
     @FXML
@@ -210,6 +212,11 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void txtSearchOnAction(ActionEvent event) {
+        Employee employee = employeeService.searchEmployee(txtSearch.getText());
+
+        employeeDetails.clear();
+        employeeDetails.add(employee);
+        tblEmployee.setItems(employeeDetails);
 
     }
 

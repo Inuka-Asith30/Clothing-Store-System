@@ -56,4 +56,51 @@ public class SupplierServiceImpl implements SupplierService {
     public boolean deleteSupplierDetails(String supplierId) {
         return supplierRepository.deleteDetails(supplierId);
     }
+
+    @Override
+    public String getNewSupplierID() {
+        ResultSet resultSet = supplierRepository.getLastId();
+
+        String lastId=null;
+
+        try {
+            while(resultSet.next()){
+                lastId = resultSet.getString("SupplierId");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        if(lastId!=null){
+            lastId = lastId.split("[A-Z]")[1];
+            String newId=String.format("S%03d",Integer.parseInt(lastId)+1);
+            return newId;
+        }
+        return "S001";
+    }
+
+    @Override
+    public Supplier searchSupplier(String supplierId) {
+        ResultSet resultSet = supplierRepository.searchDetails(supplierId);
+
+        Supplier supplier=null;
+
+        try {
+            while(resultSet.next()){
+                supplier=new Supplier(
+                        resultSet.getString("SupplierId"),
+                        resultSet.getString("Name"),
+                        resultSet.getString("Address"),
+                        resultSet.getString("Email"),
+                        resultSet.getString("PhoneNumber")
+                );
+            }
+
+            return supplier;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

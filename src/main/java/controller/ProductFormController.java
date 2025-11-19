@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 
 public class ProductFormController implements Initializable {
 
+    public JFXButton btnNewId;
     @FXML
     private JFXButton btnAdd;
 
@@ -145,7 +146,7 @@ public class ProductFormController implements Initializable {
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
-
+        loadProductDetails();
     }
 
     @FXML
@@ -175,7 +176,11 @@ public class ProductFormController implements Initializable {
 
     @FXML
     void txtSearchOnAction(ActionEvent event) {
+        Product product = productService.searchProduct(txtSearch.getText());
 
+        productObservableList.clear();
+        productObservableList.add(product);
+        tblProduct.setItems(productObservableList);
     }
 
     @Override
@@ -218,5 +223,10 @@ public class ProductFormController implements Initializable {
         productObservableList.clear();
         productObservableList=productService.getAllDetails();
         tblProduct.setItems(productObservableList);
+    }
+
+    public void btnNewIdOnAction(ActionEvent actionEvent) {
+        txtProductId.setText(productService.getNewId());
+
     }
 }

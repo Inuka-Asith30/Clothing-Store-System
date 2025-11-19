@@ -79,4 +79,27 @@ public class ProductServiceImpl implements ProductService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public String getNewId() {
+        ResultSet resultSet = productRepository.getLastId();
+
+        String lastId=null;
+
+        try {
+            while(resultSet.next()){
+                lastId=resultSet.getString("ProductId");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        if(lastId!=null){
+            lastId=lastId.split("[A-Z]")[1];
+            String newId=String.format("P%03d",Integer.parseInt(lastId)+1);
+            return newId;
+        }
+        return "P001";
+    }
 }

@@ -74,4 +74,27 @@ public class SupplierRepositoryImpl implements SupplierRepository {
         }
     }
 
+    @Override
+    public ResultSet getLastId() {
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("select SupplierId from supplier Order by SupplierId DESC LImit 1");
+            return preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public ResultSet searchDetails(String supplierId) {
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("select * from supplier where SupplierId=?");
+            preparedStatement.setObject(1,supplierId);
+            return preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

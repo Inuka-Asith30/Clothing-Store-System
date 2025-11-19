@@ -9,6 +9,6 @@ public interface EmployeeService {
     boolean deleteEmployeeDetails(String employeeId);
     boolean updateEmloyeeDetails(Employee employee);
     Employee searchEmployee(String employeeId);
-    String getLastEmployeeID();
+    String getNewEmployeeID();
 
 }

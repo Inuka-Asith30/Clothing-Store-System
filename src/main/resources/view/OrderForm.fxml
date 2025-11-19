@@ -168,5 +168,10 @@
             <TableColumn fx:id="colDiscount" prefWidth="84.80002441406248" text="Discount" />
         </columns>
       </TableView>
+      <JFXButton fx:id="btnClearTable" layoutX="476.0" layoutY="627.0" onAction="#btnClearTableOnAction" prefHeight="50.0" prefWidth="148.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 10px;" text="Clear Table" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

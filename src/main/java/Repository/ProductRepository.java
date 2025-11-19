@@ -10,4 +10,5 @@ public interface ProductRepository {
     boolean deleteDetails(String productId);
     boolean updateDetails(Product product);
     ResultSet searchProduct(String productId);
+    ResultSet getLastId();
 }

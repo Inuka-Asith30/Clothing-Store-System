@@ -5,27 +5,27 @@ import javafx.stage.Stage;
 
 public class Starter extends Application {
 
-    public Stage loginFormstage;
+    public static Starter instance;
+    public static Stage loginFormstage;
     private Stage stage;
 
     public static void main(String[] args){
         launch();
     }
 
-    public void closeLoginForm(){
-        System.out.println(this.loginFormstage);
-        //loginFormstage.close();
+
+    public void closeLoginForm() {
+        loginFormstage.close();
     }
+
 
     @Override
     public void start(Stage stage) throws Exception {
 
-
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/LoginForm.fxml"))));
         stage.show();
+        stage.setResizable(false);
         loginFormstage=stage;
-
-        System.out.println(loginFormstage);
     }
 
 

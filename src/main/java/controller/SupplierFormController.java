@@ -77,6 +77,8 @@ public class SupplierFormController implements Initializable {
     @FXML
     private Label lblDate;
 
+    SupplierService supplierService=new SupplierServiceImpl();
+
     Alert informationAlert =new Alert(Alert.AlertType.INFORMATION);
 
     ObservableList<Supplier> supplierObservableList= FXCollections.observableArrayList();
@@ -132,7 +134,7 @@ public class SupplierFormController implements Initializable {
 
     @FXML
     void btnNewIdOnAction(ActionEvent event) {
-
+        txtSupplierId.setText(supplierService.getNewSupplierID());
     }
 
     @FXML
@@ -165,10 +167,14 @@ public class SupplierFormController implements Initializable {
 
     @FXML
     void txtSearchOnAction(ActionEvent event) {
-
+        Supplier supplier = supplierService.searchSupplier(txtSearch.getText());
+        System.out.println(supplier);
+        supplierObservableList.clear();
+        supplierObservableList.add(supplier);
+        tblSupplier.setItems(supplierObservableList);
     }
 
-    SupplierService supplierService=new SupplierServiceImpl();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -42,6 +42,7 @@ public class LoginFormController implements Initializable {
 
     Stage mainFormStage=new Stage();
     Starter starter=new Starter();
+    public static Stage mainFormStageStatic;
 
     Alert ErrorAlert =new Alert(Alert.AlertType.ERROR);
 
@@ -59,6 +60,11 @@ public class LoginFormController implements Initializable {
                 mainFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"))));
                 mainFormStage.show();
                 mainFormStage.setResizable(false);
+                Starter.loginFormstage.close();
+                mainFormStageStatic=mainFormStage;
+
+                txtEmployeeId.setText(null);
+                txtPassword.setText(null);
 
 
             } catch (IOException e) {
@@ -81,4 +87,5 @@ public class LoginFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lblGreeting.setText(loginFormService.getTime());
     }
+
 }

@@ -89,7 +89,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public String getLastEmployeeID() {
+    public String getNewEmployeeID() {
         ResultSet resultSet=employeeRepository.getLastEmpID();
 
         String lastId = null;

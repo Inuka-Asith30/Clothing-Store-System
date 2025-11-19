@@ -1,5 +1,3 @@
-package controller;
-
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,10 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import service.Impl.LoginFormServiceImpl;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalTime;
 import java.util.ResourceBundle;
 
 public class MainFormController implements Initializable {
@@ -45,12 +43,15 @@ public class MainFormController implements Initializable {
     private BorderPane mainPane;
 
     private Pane view;
+    private Pane orderView;
+
+
 
     @FXML
     void btnOrderOnAction(ActionEvent event) throws IOException {
-        view=new FXMLLoader().load(getClass().getResource("/view/OrderForm.fxml"));
-        mainPane.setCenter(view);
+        mainPane.setCenter(orderView);
     }
+
     @FXML
     void btnEmployeeOnAction(ActionEvent event) throws IOException {
         view=new FXMLLoader().load(getClass().getResource("/view/EmployeeForm.fxml"));
@@ -59,7 +60,7 @@ public class MainFormController implements Initializable {
 
     @FXML
     void btnInventoryOnAction(ActionEvent event) throws IOException {
-        view=new FXMLLoader().load(getClass().getResource("/view/InventoryForm.fxml"));
+        view=new FXMLLoader().load(getClass().getResource("/view/ProductForm.fxml"));
         mainPane.setCenter(view);
     }
 
@@ -67,6 +68,12 @@ public class MainFormController implements Initializable {
     void btnSupplierOnAction(ActionEvent event) throws IOException {
         view=new FXMLLoader().load(getClass().getResource("/view/SupplierForm.fxml"));
         mainPane.setCenter(view);
+    }
+
+    @FXML
+    void btnLogOutOnAction(ActionEvent event) {
+        LoginFormController.mainFormStageStatic.close();
+        Starter.loginFormstage.show();
     }
 
     public void btnDashBoardOnAction(ActionEvent actionEvent){
@@ -77,6 +84,14 @@ public class MainFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dashBoardLoader();
+        try {
+            orderView =new FXMLLoader().load(getClass().getResource("/view/OrderForm.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        lblEmployeeName.setText(LoginFormServiceImpl.getEmployee.getName());
+        lblEmpoyeeID.setText(LoginFormServiceImpl.getEmployee.getEmployeeId());
 
     }
 

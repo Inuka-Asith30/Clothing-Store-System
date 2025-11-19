@@ -21,6 +21,9 @@ import java.util.ResourceBundle;
 public class OrderFormController implements Initializable {
 
     @FXML
+    private JFXButton btnClearTable;
+
+    @FXML
     private JFXButton btnAddtoCard;
 
     @FXML
@@ -99,7 +102,6 @@ public class OrderFormController implements Initializable {
 
         addToCardObservableList.add(new AddToCard(productIDValue,nameText,categoryValue,priceText,qtyText,discountText));
 
-
         netTotal=netTotal+(priceText*qtyText);
 
         lblNetTotal.setText(String.valueOf(netTotal));
@@ -116,7 +118,17 @@ public class OrderFormController implements Initializable {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
+        txtProductName.setText(null);
+        cmbProductID.setValue(null);
+        cmbCategory.setValue(null);
+        txtPrice.setText(null);
+        txtQty.setText(null);
+        txtDiscount.setText(null);
+    }
 
+    @FXML
+    void btnClearTableOnAction(ActionEvent event) {
+        clearTable();
     }
 
     @FXML
@@ -146,7 +158,6 @@ public class OrderFormController implements Initializable {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
-
 
         String orderIDText = lblOrderID.getText();
         LocalDate localDate = LocalDate.parse(lblOrderDate.getText());

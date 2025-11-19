@@ -9,6 +9,8 @@ public interface SupplierService {
     boolean addSupplierDetails(Supplier supplier);
     boolean updateSupplierDetails(Supplier supplier);
     boolean deleteSupplierDetails(String supplierId);
+    String getNewSupplierID();
+    Supplier searchSupplier(String supplierId);
 
 
 }
