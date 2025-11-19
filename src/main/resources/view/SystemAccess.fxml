@@ -10,10 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="477.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginAccessFormController">
+<AnchorPane prefHeight="477.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SystemAccessFormController">
    <children>
-      <Label layoutX="37.0" layoutY="29.0" prefHeight="66.0" prefWidth="252.0" text="Login Access" textFill="#373644">
+      <Label layoutX="37.0" layoutY="29.0" prefHeight="66.0" prefWidth="278.0" text="System Access" textFill="#373644">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
@@ -73,10 +72,10 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <TableView layoutX="37.0" layoutY="135.0" prefHeight="293.0" prefWidth="382.0">
+      <TableView fx:id="tblSystemAccess" layoutX="37.0" layoutY="135.0" prefHeight="293.0" prefWidth="382.0">
         <columns>
-          <TableColumn prefWidth="182.3999900817871" text="Empolyee Id" />
-          <TableColumn prefWidth="198.40003967285156" text="Password" />
+          <TableColumn fx:id="colEmployeeId" prefWidth="182.3999900817871" text="Empolyee Id" />
+          <TableColumn fx:id="colPassword" prefWidth="198.40003967285156" text="Password" />
         </columns>
       </TableView>
    </children>
