@@ -12,14 +12,21 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="718.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+<AnchorPane prefHeight="718.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainFormController">
    <children>
       <BorderPane fx:id="mainPane" prefHeight="738.0" prefWidth="1028.0">
          <left>
             <VBox prefHeight="718.0" prefWidth="208.0" style="-fx-background-color: #373644;" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane prefHeight="203.0" prefWidth="208.0" />
-                  <Button id="btnDashBoard" fx:id="btnDashBoard" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="208.0" styleClass="btnDashBoard" stylesheets="@../style/style.css" text="Dash Board" textFill="WHITE">
+                  <AnchorPane prefHeight="203.0" prefWidth="208.0">
+                     <children>
+                        <ImageView fitHeight="132.0" fitWidth="156.0" layoutX="26.0" layoutY="36.0">
+                           <image>
+                              <Image url="@../img/img_8.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+                  <Button id="btnDashBoard" fx:id="btnDashBoard" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnDashBoardOnAction" prefHeight="66.0" prefWidth="208.0" styleClass="btnDashBoard" stylesheets="@../style/style.css" text="Dash Board" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -33,6 +40,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" />
+                     </VBox.margin>
                   </Button>
                   <Button fx:id="btnOrder" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnOrderOnAction" prefHeight="65.0" prefWidth="208.0" styleClass="btnOrder" stylesheets="@../style/style.css" text="Order" textFill="WHITE">
                      <graphic>
@@ -48,6 +61,9 @@
                      <padding>
                         <Insets left="20.0" />
                      </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="16.0" />
+                     </VBox.margin>
                   </Button>
                   <Button fx:id="btnInventory" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnInventoryOnAction" prefHeight="62.0" prefWidth="208.0" styleClass="btnInventory" stylesheets="@../style/style2.css" text="Inventory" textFill="WHITE">
                      <font>
@@ -63,6 +79,9 @@
                      <padding>
                         <Insets left="20.0" />
                      </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" />
+                     </VBox.margin>
                   </Button>
                   <Button fx:id="btnEmployee" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnEmployeeOnAction" prefHeight="65.0" prefWidth="208.0" styleClass="btnEmployee" stylesheets="@../style/style.css" text="Employee" textFill="WHITE">
                      <font>
@@ -78,8 +97,11 @@
                      <padding>
                         <Insets left="20.0" />
                      </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" />
+                     </VBox.margin>
                   </Button>
-                  <Button fx:id="btnSupplier" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="60.0" prefWidth="208.0" styleClass="btnSupplier" stylesheets="@../style/style.css" text="Supplier" textFill="WHITE">
+                  <Button fx:id="btnSupplier" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnSupplierOnAction" prefHeight="65.0" prefWidth="208.0" styleClass="btnSupplier" stylesheets="@../style/style.css" text="Supplier" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -93,6 +115,9 @@
                      <padding>
                         <Insets left="20.0" />
                      </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" />
+                     </VBox.margin>
                   </Button>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -109,7 +134,7 @@
                                     <Font size="11.0" />
                                  </font>
                               </Label>
-                              <JFXButton fx:id="btnLogOut" layoutX="101.0" layoutY="56.0" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: red;" text="Log out" textFill="WHITE">
+                              <JFXButton fx:id="btnLogOut" layoutX="101.0" layoutY="56.0" onAction="#btnLogOutOnAction" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: red; -fx-background-radius: 10px;" text="Log out" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>

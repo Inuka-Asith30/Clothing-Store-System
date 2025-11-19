@@ -1,5 +1,6 @@
 .btnInventory{
 -fx-background-color:#373644;
+-fx-background-radius:20px 0px 0px 20px;
 
 }
 .btnInventory:hover{

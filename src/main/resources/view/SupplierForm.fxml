@@ -1,98 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="718.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierFormController">
    <children>
-      <Label layoutX="27.0" layoutY="19.0" prefHeight="66.0" prefWidth="236.0" text="Supplier" textFill="#373644">
+      <Label layoutX="21.0" layoutY="19.0" prefHeight="66.0" prefWidth="236.0" text="Supplier" textFill="#373644">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="lblOrderDate" layoutX="29.0" layoutY="102.0" prefHeight="49.0" prefWidth="329.0" text="27/08/2025" textFill="#373644">
-         <font>
-            <Font name="System Bold" size="27.0" />
-         </font>
-      </Label>
-      <JFXComboBox fx:id="cmbProductID" layoutX="27.0" layoutY="201.0" prefHeight="42.0" prefWidth="167.0" />
-      <Label layoutX="27.0" layoutY="186.0" prefHeight="19.0" prefWidth="73.0" text="Supplier ID" textFill="#373644">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="241.0" layoutY="186.0" prefHeight="19.0" prefWidth="86.0" text="Name" textFill="#373644">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <JFXTreeTableView fx:id="tblInventory" currentItemsCount="4" layoutX="27.0" layoutY="354.0" prefHeight="286.0" prefWidth="766.0" />
-      <JFXButton fx:id="btnDelete" layoutX="665.0" layoutY="27.0" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+      <JFXButton fx:id="btnDelete" layoutX="665.0" layoutY="27.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <Label layoutX="500.0" layoutY="186.0" prefHeight="19.0" prefWidth="86.0" text="Category" textFill="#373644">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="txtProductName" layoutX="241.0" layoutY="207.0" prefHeight="36.0" prefWidth="208.0" />
-      <JFXTextField fx:id="txtCategory" layoutX="500.0" layoutY="207.0" prefHeight="36.0" prefWidth="292.0" />
-      <Label layoutX="27.0" layoutY="259.0" prefHeight="19.0" prefWidth="73.0" text="Adderss" textFill="#373644">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="txtPrice" layoutX="27.0" layoutY="278.0" prefHeight="36.0" prefWidth="208.0" />
-      <Label layoutX="255.0" layoutY="259.0" prefHeight="19.0" prefWidth="86.0" text="DOB" textFill="#373644">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="txtQty" layoutX="255.0" layoutY="278.0" prefHeight="36.0" prefWidth="208.0" />
-      <JFXButton fx:id="btnClear" layoutX="643.0" layoutY="279.0" prefHeight="43.0" prefWidth="148.0" style="-fx-background-color: #49D1D1;" text="Clear" textFill="WHITE">
+      <JFXButton fx:id="btnAdd" layoutX="390.0" layoutY="27.0" onAction="#btnAddOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Add" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <Label layoutX="479.0" layoutY="259.0" prefHeight="19.0" prefWidth="73.0" text="Discount" textFill="#373644">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="txtDiscount" layoutX="479.0" layoutY="279.0" prefHeight="36.0" prefWidth="154.0" />
-      <JFXButton fx:id="btnAdd" layoutX="390.0" layoutY="27.0" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Add" textFill="WHITE">
+      <JFXButton fx:id="btnUpdate" layoutX="529.0" layoutY="27.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnUpdate" layoutX="529.0" layoutY="27.0" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #49D1D1;" text="Update" textFill="WHITE">
+      <JFXButton fx:id="btnReload" layoutX="279.0" layoutY="653.0" onAction="#btnReloadOnAction" prefHeight="50.0" prefWidth="222.0" style="-fx-background-color: #49D1D1;" text="Reload" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXTextField layoutX="568.0" layoutY="109.0" prefHeight="36.0" prefWidth="222.0" promptText="Search">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </JFXTextField>
-      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="527.0" layoutY="111.0">
-         <image>
-            <Image url="@../img/img_5.png" />
-         </image>
-      </ImageView>
-      <JFXButton fx:id="btnReload" layoutX="279.0" layoutY="653.0" prefHeight="50.0" prefWidth="222.0" style="-fx-background-color: #49D1D1;" text="Reload" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </JFXButton>
+      <TableView fx:id="tblSupplier" layoutX="27.0" layoutY="400.0" prefHeight="235.0" prefWidth="766.0">
+        <columns>
+          <TableColumn fx:id="colSupplierId" prefWidth="75.0" text="Supplier Id" />
+          <TableColumn fx:id="colName" prefWidth="135.1999740600586" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="232.0" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="170.40005493164062" text="Email" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="153.5999755859375" text="Phone Number" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="27.0" layoutY="104.0" prefHeight="274.0" prefWidth="758.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;">
+         <children>
+            <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="483.0" layoutY="15.0">
+               <image>
+                  <Image url="@../img/img_5.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtSearch" layoutX="516.0" layoutY="14.0" onAction="#txtSearchOnAction" prefHeight="36.0" prefWidth="227.0" promptText="Search by Employee ID" style="-fx-background-color: #e3ffff;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblDate" layoutX="19.0" layoutY="7.0" prefHeight="49.0" prefWidth="329.0" text="27/08/2025" textFill="#373644">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <VBox layoutX="19.0" layoutY="74.0" prefHeight="60.0" prefWidth="167.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="73.0" text="Supplier Id" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSupplierId" prefHeight="36.0" prefWidth="212.0" promptText="Supplier Id" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="263.0" layoutY="71.0" prefHeight="66.0" prefWidth="470.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Name" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSupplierName" prefHeight="36.0" prefWidth="511.0" promptText="Name" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="19.0" layoutY="133.0" prefHeight="66.0" prefWidth="469.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Address" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAddress" prefHeight="36.0" prefWidth="289.0" promptText="Adderss" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="19.0" layoutY="198.0" prefHeight="66.0" prefWidth="576.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Email" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtEmail" prefHeight="36.0" prefWidth="212.0" promptText="Email" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+            <JFXButton fx:id="btnClear" layoutX="603.0" layoutY="210.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="134.0" style="-fx-background-color: #49D1D1;" text="Clear" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <VBox layoutX="499.0" layoutY="133.0" prefHeight="66.0" prefWidth="236.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Phone Number" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPhoneNumber" prefHeight="36.0" prefWidth="289.0" promptText="Phone Number" style="-fx-background-color: #e3ffff;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <JFXButton fx:id="btnNewId" layoutX="197.0" layoutY="89.0" onAction="#btnNewIdOnAction" prefHeight="43.0" prefWidth="65.0" style="-fx-background-color: #49D1D1;" text="New Id" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

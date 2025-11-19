@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="526.0" prefWidth="790.0" style="-fx-background-color: #49D1D1;" styleClass="sideAnchorPane" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane fx:id="root" prefHeight="526.0" prefWidth="790.0" style="-fx-background-color: #49D1D1;" styleClass="sideAnchorPane" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginFormController">
    <children>
       <AnchorPane id="sideAnchorPane" fx:id="sideAnchorPane" layoutX="395.0" prefHeight="526.0" prefWidth="397.0" style="-fx-border-radius: 20px; -fx-background-color: #FFFFFF;">
          <children>
-            <ImageView fitHeight="72.0" fitWidth="118.0" layoutX="266.0" layoutY="14.0">
+            <ImageView fitHeight="79.0" fitWidth="122.0" layoutX="262.0" layoutY="14.0">
                <image>
-                  <Image url="@../img/7570000.jpg" />
+                  <Image url="@../img/img_7.png" />
                </image>
             </ImageView>
             <Label layoutX="48.0" layoutY="98.0" prefHeight="36.0" prefWidth="111.0" style="-fx-font-style: #FFFFFF;" text="Hello!" textAlignment="CENTER" textFill="#373644">
@@ -23,7 +25,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label layoutX="48.0" layoutY="125.0" prefHeight="36.0" prefWidth="170.0" style="-fx-font-style: #FFFFFF;" text="Good Morning" textAlignment="CENTER" textFill="#49d1d1">
+            <Label fx:id="lblGreeting" layoutX="48.0" layoutY="125.0" prefHeight="36.0" prefWidth="279.0" style="-fx-font-style: #FFFFFF;" text="Good Morning" textAlignment="CENTER" textFill="#49d1d1">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -38,31 +40,41 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="67.0" layoutY="313.0" prefHeight="26.0" prefWidth="62.0" style="-fx-font-style: #FFFFFF;" text="Password" textAlignment="CENTER" textFill="#373644">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Label>
-            <Label layoutX="69.0" layoutY="249.0" prefHeight="26.0" prefWidth="147.0" style="-fx-font-style: #FFFFFF;" text="Employee Id" textAlignment="CENTER" textFill="#373644">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Label>
-            <JFXButton layoutX="85.0" layoutY="410.0" prefHeight="54.0" prefWidth="220.0" style="-fx-background-color: #49D1D1; -fx-border-radius: 40px;" text="SUBMIT" textFill="WHITE">
+            <JFXButton fx:id="btnSubmit" layoutX="60.0" layoutY="430.0" onAction="#btnSubmitOnAction" prefHeight="54.0" prefWidth="279.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 30px;" text="SUBMIT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
             </JFXButton>
-            <TextField layoutX="67.0" layoutY="276.0" prefHeight="36.0" prefWidth="256.0" promptText="Enter your Employee ID" style="-fx-background-color: #e3ffff;">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </TextField>
-            <PasswordField layoutX="67.0" layoutY="339.0" prefHeight="36.0" prefWidth="256.0" promptText="Enter your Passowrd" style="-fx-background-color: #e3ffff;">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </PasswordField>
+            <VBox layoutX="60.0" layoutY="248.0" prefHeight="147.0" prefWidth="279.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="147.0" style="-fx-font-style: #FFFFFF;" text="Employee Id" textAlignment="CENTER" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txtEmployeeId" prefHeight="80.0" prefWidth="256.0" promptText="Enter your Employee ID" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="10.0" prefWidth="62.0" style="-fx-font-style: #FFFFFF;" text="Password" textAlignment="CENTER" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <PasswordField fx:id="txtPassword" prefHeight="80.0" prefWidth="279.0" promptText="Enter your Passowrd" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
       <Label layoutX="58.0" layoutY="135.0" prefHeight="36.0" prefWidth="159.0" style="-fx-font-style: #FFFFFF;" text="Good Morning" textAlignment="CENTER" textFill="#49d1d1">
