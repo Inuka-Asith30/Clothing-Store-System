@@ -105,12 +105,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         if(lastId!=null){
             lastId = lastId.split("[A-Z]")[1];//C060-->060
-            String newId= String.format("C%03d",(Integer.parseInt(lastId)+1));
+            String newId= String.format("E%03d",(Integer.parseInt(lastId)+1));
 
             return newId;
         }
 
-        return "C001";
+        return "E001";
 
 
     }
