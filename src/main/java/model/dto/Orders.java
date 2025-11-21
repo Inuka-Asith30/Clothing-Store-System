@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Getter
 
 public class Orders {
+    private String customerId;
     private String orderId;
     private LocalDate orderDate;
     private String orderStatus;

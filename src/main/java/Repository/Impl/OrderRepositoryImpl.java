@@ -41,10 +41,11 @@ public class OrderRepositoryImpl implements OrderRepository {
     public boolean addOrders(Orders orders) {
         try {
             Connection connection=DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO Orders(OrderID,OrderDate,OrderStatus) VALUES(?,?,?)");
-            preparedStatement.setObject(1,orders.getOrderId());
-            preparedStatement.setObject(2,orders.getOrderDate());
-            preparedStatement.setObject(3,orders.getOrderStatus());
+            PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO Orders(CustID,OrderID,OrderDate,OrderStatus) VALUES(?,?,?,?)");
+            preparedStatement.setObject(1,orders.getCustomerId());
+            preparedStatement.setObject(2,orders.getOrderId());
+            preparedStatement.setObject(3,orders.getOrderDate());
+            preparedStatement.setObject(4,orders.getOrderStatus());
 
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
