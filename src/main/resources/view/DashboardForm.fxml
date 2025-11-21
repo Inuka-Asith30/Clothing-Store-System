@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -21,18 +20,18 @@
          <children>
             <BorderPane layoutY="-1.0" prefHeight="337.0" prefWidth="659.0">
                <center>
-                  <BarChart BorderPane.alignment="CENTER">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </BarChart>
+                  <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn prefWidth="172.80001068115234" text="Customer Id" />
+                      <TableColumn prefWidth="168.79998779296875" text="Order Id" />
+                        <TableColumn prefWidth="164.80001831054688" text="Order Date" />
+                        <TableColumn prefWidth="154.39996337890625" text="Order Status" />
+                    </columns>
+                  </TableView>
                </center>
             </BorderPane>
          </children></AnchorPane>
-      <HBox layoutX="81.0" layoutY="128.0" prefHeight="198.0" prefWidth="658.0">
+      <HBox layoutX="81.0" layoutY="120.0" prefHeight="198.0" prefWidth="658.0">
          <children>
             <AnchorPane prefHeight="170.0" prefWidth="219.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;" />
             <AnchorPane prefHeight="170.0" prefWidth="219.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;">

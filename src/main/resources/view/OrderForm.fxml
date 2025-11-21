@@ -53,7 +53,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <AnchorPane layoutX="34.0" layoutY="169.0" prefHeight="191.0" prefWidth="750.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;">
+      <AnchorPane layoutX="34.0" layoutY="169.0" prefHeight="202.0" prefWidth="750.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20px;">
          <children>
             <VBox layoutX="16.0" layoutY="19.0" prefHeight="60.0" prefWidth="191.0">
                <children>
@@ -65,7 +65,7 @@
                   <ComboBox fx:id="cmbProductID" onAction="#cmbProductIDOnAction" prefHeight="36.0" prefWidth="197.0" promptText="Select Product ID" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;" />
                </children>
             </VBox>
-            <VBox layoutX="207.0" layoutY="19.0" prefHeight="66.0" prefWidth="236.0">
+            <VBox layoutX="16.0" layoutY="162.0" prefHeight="66.0" prefWidth="259.0">
                <children>
                   <Label prefHeight="19.0" prefWidth="100.0" text="Product Name" textFill="#373644">
                      <font>
@@ -77,19 +77,6 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </TextField>
-               </children>
-               <padding>
-                  <Insets left="10.0" right="10.0" />
-               </padding>
-            </VBox>
-            <VBox layoutX="444.0" layoutY="19.0" prefHeight="66.0" prefWidth="290.0">
-               <children>
-                  <Label prefHeight="19.0" prefWidth="100.0" text="Category" textFill="#373644">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="cmbCategory" onAction="#cmbCategoryOnAction" prefHeight="36.0" prefWidth="294.0" promptText="Select the Category" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;" />
                </children>
             </VBox>
             <VBox layoutX="16.0" layoutY="96.0" prefHeight="66.0" prefWidth="191.0">
@@ -126,7 +113,7 @@
                   <Insets left="10.0" right="10.0" />
                </padding>
             </VBox>
-            <VBox layoutX="398.0" layoutY="96.0" prefHeight="66.0" prefWidth="191.0">
+            <VBox layoutX="286.0" layoutY="161.0" prefHeight="66.0" prefWidth="310.0">
                <children>
                   <Label prefHeight="19.0" prefWidth="100.0" text="Discount" textFill="#373644">
                      <font>
@@ -146,11 +133,61 @@
                   <Insets />
                </opaqueInsets>
             </VBox>
-            <JFXButton fx:id="btnClear" layoutX="607.0" layoutY="114.0" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="127.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 20px;" text="Clear" textFill="WHITE">
+            <JFXButton fx:id="btnClear" layoutX="606.0" layoutY="173.0" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="127.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 20px;" text="Clear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </JFXButton>
+            <VBox layoutX="219.0" layoutY="19.0" prefHeight="66.0" prefWidth="215.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Phone Number" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPhoneNumber" onAction="#txtPhoneNumberOnAction" prefHeight="36.0" prefWidth="289.0" promptText="Phone Number" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox layoutX="398.0" layoutY="96.0" prefHeight="66.0" prefWidth="335.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Category" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cmbCategory" onAction="#cmbCategoryOnAction" prefHeight="36.0" prefWidth="333.0" promptText="Select the Category" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;" />
+               </children>
+            </VBox>
+            <VBox layoutX="441.0" layoutY="19.0" prefHeight="66.0" prefWidth="290.0">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Customer Name" textFill="#373644">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCustomerName" editable="false" prefHeight="36.0" prefWidth="289.0" promptText="Customer Name" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
          </children>
       </AnchorPane>
       <JFXButton fx:id="btnPlaceOrder1" layoutX="384.0" layoutY="30.0" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 10px;" text="Transactions" textFill="WHITE">
@@ -158,7 +195,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <TableView fx:id="tblAddToCard" layoutX="34.0" layoutY="390.0" prefHeight="218.0" prefWidth="750.0">
+      <TableView fx:id="tblAddToCard" layoutX="34.0" layoutY="409.0" prefHeight="199.0" prefWidth="750.0">
         <columns>
           <TableColumn fx:id="colProductId" prefWidth="84.0" text="Product Id" />
           <TableColumn fx:id="colName" prefWidth="232.0000228881836" text="Name" />
