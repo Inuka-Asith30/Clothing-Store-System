@@ -9,8 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dto.AddToCard;
+import model.dto.Customer;
 import model.dto.Orders;
 import model.dto.Product;
+import service.CustomerService;
+import service.Impl.CustomerServiceImpl;
 import service.Impl.OrderServiceImpl;
 import service.OrderService;
 
@@ -60,6 +63,9 @@ public class OrderFormController implements Initializable {
     private TableColumn<?, ?> colQty;
 
     @FXML
+    private TextField txtCustomerName;
+
+    @FXML
     private Label lblNetTotal;
 
     @FXML
@@ -75,6 +81,9 @@ public class OrderFormController implements Initializable {
     private TextField txtDiscount;
 
     @FXML
+    private TextField txtPhoneNumber;
+
+    @FXML
     private TextField txtPrice;
 
     @FXML
@@ -85,7 +94,11 @@ public class OrderFormController implements Initializable {
 
     Double netTotal=0.0;
 
+    Customer customer=null;
+
     ObservableList<AddToCard> addToCardObservableList= FXCollections.observableArrayList();
+
+    CustomerService customerService=new CustomerServiceImpl();
 
     OrderService orderService=new OrderServiceImpl();
 
@@ -100,19 +113,61 @@ public class OrderFormController implements Initializable {
         String categoryValue = cmbCategory.getValue();
         Integer discountText = Integer.parseInt(txtDiscount.getText());
 
-        addToCardObservableList.add(new AddToCard(productIDValue,nameText,categoryValue,priceText,qtyText,discountText));
+        AddToCard toCard = new AddToCard(productIDValue, nameText, categoryValue, priceText, qtyText, discountText);
 
-        netTotal=netTotal+(priceText*qtyText);
+//        if(productIDValue==null){
+//            InformationAlert.setContentText("Please select Product Id");
+//        }
+//        else if(categoryValue==null){
+//            InformationAlert.setContentText("Please select Category");
+//        }
+//        else if(txtQty.getText()==null){
+//            InformationAlert.setContentText("Please enter Quantity");
+//        }
+//        else if(txtDiscount.getText().equals("")){
+//            InformationAlert.setContentText("Please enter discount");
+//        }
+//        else{
+//
+//        }
 
-        lblNetTotal.setText(String.valueOf(netTotal));
+        int index=0;
 
+        boolean isEquated=false;
+
+        for(AddToCard addToCard : addToCardObservableList){
+
+            if(addToCard.getProductId().equals(toCard.getProductId())){
+                Integer totalQty=addToCard.getQty()+toCard.getQty();
+                addToCard.setQty(totalQty);
+                addToCardObservableList.remove(index);
+                addToCardObservableList.add(index,addToCard);
+
+                isEquated=true;
+                break;
+            }
+            index=index+1;
+
+        }
+        if(isEquated!=true){
+           addToCardObservableList.add(toCard);
+        }
         loadAddtoCardTable();
+        netTotal=netTotal+(priceText*qtyText);
+        lblNetTotal.setText(String.valueOf(netTotal));
+        btnPlaceOrder.setDisable(false);
+
+
+
+
+
 
 
 
     }
 
     private void loadAddtoCardTable() {
+        tblAddToCard.refresh();
         tblAddToCard.setItems(addToCardObservableList);
     }
 
@@ -163,7 +218,7 @@ public class OrderFormController implements Initializable {
         LocalDate localDate = LocalDate.parse(lblOrderDate.getText());
         String orderStatus="Preparing";
 
-        Orders orders=new Orders(orderIDText,localDate,orderStatus);
+        Orders orders=new Orders(customer.getCustomerId(),orderIDText,localDate,orderStatus);
 
         boolean isAdded=orderService.addOrder(orders,addToCardObservableList);
 
@@ -204,6 +259,23 @@ public class OrderFormController implements Initializable {
 
         txtProductName.setEditable(false);
         txtPrice.setEditable(false);
+        btnPlaceOrder.setDisable(true);
 
     }
+    @FXML
+    void txtPhoneNumberOnAction(ActionEvent event) {
+        customer = customerService.searchCustomerbyPhoneNo(txtPhoneNumber.getText());
+
+
+        if(customer==null){
+            InformationAlert.setContentText("Customer is not found");
+
+            InformationAlert.show();
+            txtCustomerName.setText(null);
+        }
+        else{
+            txtCustomerName.setText(customer.getName());
+        }
+    }
+
 }
