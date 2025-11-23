@@ -61,9 +61,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee searchEmployee(String employeeId) {
+    public Employee searchEmployeeById(String employeeId) {
 
-        ResultSet resultSet = employeeRepository.searchEmployee(employeeId);
+        ResultSet resultSet = employeeRepository.searchEmployeeById(employeeId);
 
         Employee employee=null;
 
@@ -112,6 +112,34 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return "E001";
 
+
+    }
+
+    @Override
+    public Employee searchEmployeeByEmail(String email) {
+        ResultSet resultSet = employeeRepository.searchEmployeeByEmail(email);
+
+        Employee employee=null;
+
+        try {
+            while(resultSet.next()){
+                employee=new Employee(
+                        resultSet.getString("EmpID"),
+                        resultSet.getString("Title"),
+                        resultSet.getString("EmpName"),
+                        resultSet.getDouble("Salary"),
+                        resultSet.getString("EmpAddress"),
+                        resultSet.getString("Position"),
+                        resultSet.getString("Email"),
+                        resultSet.getString("PhoneNumber")
+                );
+            }
+
+            return employee;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

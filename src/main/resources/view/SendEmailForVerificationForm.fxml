@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="526.0" prefWidth="790.0" style="-fx-background-color: #49D1D1;" styleClass="sideAnchorPane" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SendEmailForVerificationFormController">
+   <children>
+      <BorderPane fx:id="mainBorder" prefHeight="528.0" prefWidth="793.0">
+         <center>
+            <AnchorPane id="sideAnchorPane" fx:id="sideAnchorPane" prefHeight="526.0" prefWidth="793.0" style="-fx-border-radius: 20px; -fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="79.0" fitWidth="122.0" layoutX="658.0" layoutY="14.0">
+                     <image>
+                        <Image url="@../img/img_7.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnSendEmail" layoutX="229.0" layoutY="368.0" onAction="#SendEmailOnAction" prefHeight="54.0" prefWidth="335.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 30px;" text="Send Email For OTP" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </JFXButton>
+                  <VBox layoutX="229.0" layoutY="274.0" prefHeight="79.0" prefWidth="335.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="147.0" style="-fx-font-style: #FFFFFF;" text="Email" textAlignment="CENTER" textFill="#373644">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="txtEmail" prefHeight="44.0" prefWidth="279.0" promptText="Enter your Email" style="-fx-background-color: #e3ffff; -fx-background-radius: 10px;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <Label alignment="TOP_CENTER" layoutX="281.0" layoutY="207.0" prefHeight="36.0" prefWidth="230.0" style="-fx-font-style: #FFFFFF;" text="Forgot your Password?" textAlignment="CENTER" textFill="#223b3b">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="333.0" layoutY="79.0">
+                     <image>
+                        <Image url="@../img/img_10.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnBackToLogin" layoutX="229.0" layoutY="433.0" onAction="#btnBackToLoginOnAction" prefHeight="54.0" prefWidth="335.0" style="-fx-background-color: #ffffff; -fx-border-color: #49D1D1; -fx-border-radius: 30px; -fx-background-radius: 30px;" text="Back to Login" textFill="#49d1d1">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

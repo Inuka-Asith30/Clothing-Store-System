@@ -212,7 +212,7 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void txtSearchOnAction(ActionEvent event) {
-        Employee employee = employeeService.searchEmployee(txtSearch.getText());
+        Employee employee = employeeService.searchEmployeeById(txtSearch.getText());
 
         employeeDetails.clear();
         employeeDetails.add(employee);
