@@ -20,7 +20,6 @@ public class CustomerServiceImpl implements CustomerService {
         ObservableList<Customer> customerObservableList= FXCollections.observableArrayList();
 
 
-
         try {
             while(resultSet.next()){
                 customerObservableList.add(
@@ -125,6 +124,25 @@ public class CustomerServiceImpl implements CustomerService {
             }
 
             return customer;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public int getCount() {
+
+        ResultSet resultSet = customerRepository.getCount();
+
+        int customersCount=0;
+
+        try {
+            while(resultSet.next()){
+                customersCount = resultSet.getInt("count(*)");
+            }
+
+            return customersCount;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -6,10 +6,7 @@ import Repository.OrderDetailsRepository;
 import Repository.OrderRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.dto.AddToCard;
-import model.dto.OrderDetails;
-import model.dto.Orders;
-import model.dto.Product;
+import model.dto.*;
 import service.OrderService;
 import service.ProductService;
 
@@ -17,6 +14,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class OrderServiceImpl implements OrderService {
+
+    ObservableList<Orders> Orders = FXCollections.observableArrayList();
 
     OrderRepository orderRepository=new OrderRepositoryImpl();
     ProductService productService=new ProductServiceImpl();
@@ -80,17 +79,66 @@ public class OrderServiceImpl implements OrderService {
         return false;
     }
 
+    @Override
+    public boolean deleteOrder(String orderId) {
+        return orderRepository.deleteOrder(orderId);
+    }
+
+    @Override
+    public boolean updateOrder(String orderId, String orderStatus) {
+        return orderRepository.updateOrder(orderId,orderStatus);
+    }
+
+    @Override
+    public ObservableList<Orders> getPrepareOrder() {
+
+
+        ResultSet resultSet = orderRepository.getAllPrepareOrder();
+
+
+        try {
+            while(resultSet.next()){
+                Orders.add(
+                        new Orders(
+                                resultSet.getString("CustID"),
+                                resultSet.getString("OrderID"),
+                                resultSet.getDate("OrderDate").toLocalDate(),
+                                resultSet.getString("OrderStatus")
+                        )
+                );
+            }
+
+            return Orders;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private boolean addOrderDetails(Orders orders,ObservableList<AddToCard> addToCardObservableList) {
 
         boolean isAdded=true;
+        boolean productQtyUpdate=true;
 
         for(AddToCard row:addToCardObservableList){
             isAdded=orderDetailsRepository.addOrderDetails(new OrderDetails(orders.getOrderId(), row.getProductId(), row.getQty(), row.getDiscount()));
 
+            productQtyUpdate = productQtyUpdate(row);
+
             if(isAdded!=true){
                 return isAdded;
             }
+            if(productQtyUpdate!=true){
+                return productQtyUpdate;
+            }
         }
         return isAdded;
+    }
+
+    private boolean productQtyUpdate(AddToCard row) {
+        Product product = productService.searchProduct(row.getProductId());
+        Integer qtyOnHand = product.getQtyOnHand();
+        qtyOnHand=qtyOnHand-row.getQty();
+        boolean updated = productService.updateDetails(new Product(product.getSupplierId(), product.getProductId(), product.getProductName(), product.getCategory(), product.getPackSize(), product.getUnitPrice(), qtyOnHand));
+        return updated;
     }
 }

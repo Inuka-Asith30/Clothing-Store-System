@@ -12,4 +12,5 @@ public interface CustomerRepository {
     ResultSet searchCustomerById(String CustId);
     ResultSet getLastCustID();
     ResultSet searchCustomerByPhoneNo(String phoneNumber);
+    ResultSet getCount();
 }

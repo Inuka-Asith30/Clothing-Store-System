@@ -2,6 +2,9 @@ package service;
 
 import javafx.collections.ObservableList;
 import model.dto.Customer;
+import model.dto.Orders;
+
+import java.sql.ResultSet;
 
 
 public interface CustomerService {
@@ -12,4 +15,6 @@ public interface CustomerService {
     Customer searchCustomerbyId(String customerId);
     String getNewCustomerID();
     Customer searchCustomerbyPhoneNo(String phoneNumber);
+    int getCount();
+
 }

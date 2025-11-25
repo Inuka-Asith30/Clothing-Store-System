@@ -1,0 +1,12 @@
+.customerBox{
+  -fx-background-radius:20px;
+   -fx-background-color:linear-gradient(to bottom,#26c6da, #006064);
+}
+.preparingBox{
+  -fx-background-radius:20px;
+  -fx-background-color:linear-gradient(to bottom,#26c6da, #006064);
+}
+.deliveredBox{
+  -fx-background-radius:20px;
+  -fx-background-color:linear-gradient(to bottom,#26c6da, #006064);
+}

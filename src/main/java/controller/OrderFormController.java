@@ -223,7 +223,7 @@ public class OrderFormController implements Initializable {
         boolean isAdded=orderService.addOrder(orders,addToCardObservableList);
 
         if(isAdded){
-            InformationAlert.setContentText("Added is successfully");
+            InformationAlert.setContentText("Order was Placed");
 
             InformationAlert.show();
 
@@ -231,7 +231,7 @@ public class OrderFormController implements Initializable {
             clearTable();
         }
         else{
-            InformationAlert.setContentText("Added is not successfully");
+            InformationAlert.setContentText("Order was not Placed");
 
             InformationAlert.show();
         }

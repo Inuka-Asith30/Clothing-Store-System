@@ -224,7 +224,7 @@ public class EmployeeFormController implements Initializable {
     @FXML
     void btnLoginAccessOnAction(ActionEvent event) {
         try {
-            loginAccessFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/SystemAccess.fxml"))));
+            loginAccessFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/SystemAccessForm.fxml"))));
             loginAccessFormStage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);

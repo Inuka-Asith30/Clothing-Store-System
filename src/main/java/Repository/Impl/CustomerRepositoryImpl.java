@@ -112,4 +112,16 @@ public class CustomerRepositoryImpl implements CustomerRepository {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public ResultSet getCount() {
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("select COUNT(*) from customer");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
