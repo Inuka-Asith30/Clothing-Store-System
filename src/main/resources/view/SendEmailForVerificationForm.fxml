@@ -22,7 +22,7 @@
                         <Image url="@../img/img_7.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnSendEmail" layoutX="229.0" layoutY="368.0" onAction="#SendEmailOnAction" prefHeight="54.0" prefWidth="335.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 30px;" text="Send Email For OTP" textFill="WHITE">
+                  <JFXButton fx:id="btnSendEmail" layoutX="229.0" layoutY="368.0" onAction="#SendEmailOnAction" prefHeight="54.0" prefWidth="335.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 30px;" text="Send Email For OTPController" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>
