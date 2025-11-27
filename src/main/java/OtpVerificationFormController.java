@@ -34,7 +34,7 @@ public class OtpVerificationFormController {
         Integer otpCodeText = Integer.parseInt(txtOtpCode.getText());
 
 
-        if(OTP.otpNumber==otpCodeText){
+        if(OTPController.otpNumber==otpCodeText){
             loginFormController.createMainform();
             LoginFormController.mainFormStageStatic.show();
             LoginFormController.verificationFormStageStatic.close();

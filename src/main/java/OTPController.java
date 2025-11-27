@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class OTP {
+public class OTPController {
 
     public static int otpNumber;
 

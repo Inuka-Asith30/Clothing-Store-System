@@ -23,7 +23,7 @@ public class SendOtpThroughGmail {
         message.setFrom(new InternetAddress(EMAIL_FROM));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(EMAIL_TO));
         message.setSubject("Otp verification");
-        message.setText("Otp Code is "+OTP.generateOTP());
+        message.setText("Otp Code is "+ OTPController.generateOTP());
         Transport.send(message);
     }
 
