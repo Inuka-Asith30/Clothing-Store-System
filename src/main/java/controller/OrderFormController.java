@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.InvoiceMainDetails;
 import model.dto.AddToCard;
 import model.dto.Customer;
 import model.dto.Orders;
@@ -63,6 +64,10 @@ public class OrderFormController implements Initializable {
     private TableColumn<?, ?> colQty;
 
     @FXML
+    private TableColumn<?, ?> colTotal;
+
+
+    @FXML
     private TextField txtCustomerName;
 
     @FXML
@@ -114,22 +119,6 @@ public class OrderFormController implements Initializable {
         Integer discountText = Integer.parseInt(txtDiscount.getText());
 
         AddToCard toCard = new AddToCard(productIDValue, nameText, categoryValue, priceText, qtyText, discountText);
-
-//        if(productIDValue==null){
-//            InformationAlert.setContentText("Please select Product Id");
-//        }
-//        else if(categoryValue==null){
-//            InformationAlert.setContentText("Please select Category");
-//        }
-//        else if(txtQty.getText()==null){
-//            InformationAlert.setContentText("Please enter Quantity");
-//        }
-//        else if(txtDiscount.getText().equals("")){
-//            InformationAlert.setContentText("Please enter discount");
-//        }
-//        else{
-//
-//        }
 
         int index=0;
 
