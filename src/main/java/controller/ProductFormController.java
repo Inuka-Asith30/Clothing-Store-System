@@ -190,7 +190,7 @@ public class ProductFormController implements Initializable {
         colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         colCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
-        colPackSize.setCellValueFactory(new PropertyValueFactory<>("packSize"));
+        colPackSize.setCellValueFactory(new PropertyValueFactory<>("size"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
 
@@ -211,7 +211,7 @@ public class ProductFormController implements Initializable {
 
         txtProductId.setText(newValue.getProductId());
         txtProductName.setText(newValue.getProductName());
-        txtPackSize.setText(newValue.getPackSize());
+        txtPackSize.setText(newValue.getSize());
         txtQty.setText(String.valueOf(newValue.getQtyOnHand()));
         txtPrice.setText(String.valueOf(newValue.getUnitPrice()));
         txtSupplierId.setText(newValue.getSupplierId());

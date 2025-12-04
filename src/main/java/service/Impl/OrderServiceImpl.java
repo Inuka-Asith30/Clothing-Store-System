@@ -155,7 +155,7 @@ public class OrderServiceImpl implements OrderService {
         Product product = productService.searchProduct(row.getProductId());
         Integer qtyOnHand = product.getQtyOnHand();
         qtyOnHand=qtyOnHand-row.getQty();
-        boolean updated = productService.updateDetails(new Product(product.getSupplierId(), product.getProductId(), product.getProductName(), product.getCategory(), product.getPackSize(), product.getUnitPrice(), qtyOnHand));
+        boolean updated = productService.updateDetails(new Product(product.getSupplierId(), product.getProductId(), product.getProductName(), product.getCategory(), product.getSize(), product.getUnitPrice(), qtyOnHand));
         return updated;
     }
 }

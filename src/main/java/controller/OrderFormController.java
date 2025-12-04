@@ -240,7 +240,7 @@ public class OrderFormController implements Initializable {
 
         lblOrderDate.setText(GetDate.getDate());
 
-        ObservableList<String>  categoryList=FXCollections.observableArrayList("Grocery","Beverages","Household","Vegetables","Fruits");
+        ObservableList<String>  categoryList=FXCollections.observableArrayList("Mens-Fashion","Womens-Fashion");
 
         cmbCategory.setItems(categoryList);
 

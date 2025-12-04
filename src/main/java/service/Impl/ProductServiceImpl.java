@@ -28,7 +28,7 @@ public class ProductServiceImpl implements ProductService {
                                 resultSet.getString("ProductId"),
                                 resultSet.getString("ProductName"),
                                 resultSet.getString("Category"),
-                                resultSet.getString("PackSize"),
+                                resultSet.getString("Size"),
                                 resultSet.getDouble("UnitPrice"),
                                 resultSet.getInt("QtyOnHand")
                         )
@@ -68,7 +68,7 @@ public class ProductServiceImpl implements ProductService {
                         resultSet.getString("ProductId"),
                         resultSet.getString("ProductName"),
                         resultSet.getString("Category"),
-                        resultSet.getString("PackSize"),
+                        resultSet.getString("Size"),
                         resultSet.getDouble("UnitPrice"),
                         resultSet.getInt("QtyOnHand")
                 );
