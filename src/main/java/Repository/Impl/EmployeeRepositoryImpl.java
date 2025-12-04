@@ -84,7 +84,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public ResultSet searchEmployee(String empId) {
+    public ResultSet searchEmployeeById(String empId) {
 
         try {
             Connection connection=DBConnection.getInstance().getConnection();
@@ -102,6 +102,18 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         try {
             Connection connection=DBConnection.getInstance().getConnection();
             PreparedStatement preparedStatement=connection.prepareStatement("select EmpID from employee Order by EmpID DESC LImit 1");
+            return preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public ResultSet searchEmployeeByEmail(String email) {
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("select * from employee where Email=?");
+            preparedStatement.setObject(1,email);
             return preparedStatement.executeQuery();
         } catch (SQLException e) {
             throw new RuntimeException(e);

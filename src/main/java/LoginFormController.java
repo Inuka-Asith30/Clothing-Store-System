@@ -4,10 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -19,6 +16,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginFormController implements Initializable {
+
+    @FXML
+    private Hyperlink btnForgotPassword;
 
     @FXML
     private JFXButton btnSubmit;
@@ -43,6 +43,9 @@ public class LoginFormController implements Initializable {
     Stage mainFormStage=new Stage();
     Starter starter=new Starter();
     public static Stage mainFormStageStatic;
+    Stage verificationFormStage=new Stage();
+
+    public static Stage verificationFormStageStatic;
 
     Alert ErrorAlert =new Alert(Alert.AlertType.ERROR);
 
@@ -56,20 +59,18 @@ public class LoginFormController implements Initializable {
         boolean isValidated=loginFormService.validateSubmit(employeeID,password);
 
         if(isValidated){
-            try {
-                mainFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"))));
-                mainFormStage.show();
-                mainFormStage.setResizable(false);
-                Starter.loginFormstage.close();
-                mainFormStageStatic=mainFormStage;
 
-                txtEmployeeId.setText(null);
-                txtPassword.setText(null);
+            createMainform();
 
 
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+
+            Starter.loginFormstage.close();
+
+            txtEmployeeId.setText(null);
+            txtPassword.setText(null);
+
+
+
 
         }
         else{
@@ -82,10 +83,32 @@ public class LoginFormController implements Initializable {
         }
     }
 
+    public void createMainform() {
+
+        try {
+            mainFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        mainFormStage.show();
+        mainFormStage.setResizable(false);
+        mainFormStageStatic=mainFormStage;
+
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lblGreeting.setText(loginFormService.getTime());
+    }
+
+    @FXML
+    void btnForgotPasswordOnAction(ActionEvent event) throws IOException {
+        verificationFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/SendEmailForVerificationForm.fxml"))));
+        verificationFormStage.show();
+        Starter.loginFormstage.close();
+        verificationFormStageStatic=verificationFormStage;
+
     }
 
 }

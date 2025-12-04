@@ -38,6 +38,21 @@ public class SystemAccessServiceImpl implements SystemAccessService {
     }
 
     @Override
+    public boolean addDetails(SystemAccess systemAccess) {
+        return systemAccessRepository.addDetails(systemAccess);
+    }
+
+    @Override
+    public boolean deleteDetails(String empId) {
+        return systemAccessRepository.deleteDetails(empId);
+    }
+
+    @Override
+    public boolean updateDetails(SystemAccess systemAccess) {
+        return systemAccessRepository.updateDetails(systemAccess);
+    }
+
+    @Override
     public SystemAccess searchEmployee(String empId) {
 
         ResultSet resultSet = systemAccessRepository.searchEmployee(empId);

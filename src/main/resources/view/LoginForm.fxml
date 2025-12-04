@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -40,7 +41,7 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnSubmit" layoutX="60.0" layoutY="430.0" onAction="#btnSubmitOnAction" prefHeight="54.0" prefWidth="279.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 30px;" text="SUBMIT" textFill="WHITE">
+            <JFXButton fx:id="btnSubmit" layoutX="60.0" layoutY="443.0" onAction="#btnSubmitOnAction" prefHeight="54.0" prefWidth="279.0" style="-fx-background-color: #49D1D1; -fx-background-radius: 30px;" text="SUBMIT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -75,6 +76,11 @@
                   </PasswordField>
                </children>
             </VBox>
+            <Hyperlink fx:id="btnForgotPassword" alignment="CENTER_RIGHT" layoutX="237.0" layoutY="402.0" onAction="#btnForgotPasswordOnAction" prefHeight="24.0" prefWidth="104.0" style="-fx-border-color: #ffffff;" text="Forgot Password">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Hyperlink>
          </children>
       </AnchorPane>
       <Label layoutX="58.0" layoutY="135.0" prefHeight="36.0" prefWidth="159.0" style="-fx-font-style: #FFFFFF;" text="Good Morning" textAlignment="CENTER" textFill="#49d1d1">

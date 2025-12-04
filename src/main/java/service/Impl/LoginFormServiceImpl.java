@@ -1,7 +1,5 @@
 package service.Impl;
 
-import javafx.beans.property.ReadOnlyProperty;
-import lombok.Getter;
 import model.dto.Employee;
 import service.EmployeeService;
 import service.LoginFormService;
@@ -36,7 +34,7 @@ public class LoginFormServiceImpl implements LoginFormService {
     @Override
     public boolean validateSubmit(String employeeID,String password) {
 
-        getEmployee=employeeService.searchEmployee(employeeID);
+        getEmployee=employeeService.searchEmployeeById(employeeID);
 
         if(employeeID.equals(systemAccessService.searchEmployee(employeeID).getEmployeeId()) && password.equals(systemAccessService.searchEmployee(employeeID).getPassword())){
 

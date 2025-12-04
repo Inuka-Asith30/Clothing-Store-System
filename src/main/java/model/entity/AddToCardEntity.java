@@ -1,4 +1,4 @@
-package model.dto;
+package model.entity;
 
 import lombok.*;
 
@@ -7,11 +7,11 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @ToString
-public class AddToCard {
+public class AddToCardEntity {
     private String productId;
     private String productName;
-    private String category;
     private Double unitPrice;
     private Integer qty;
     private Integer discount;
+    private Double total;
 }

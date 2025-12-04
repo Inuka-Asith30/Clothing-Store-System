@@ -119,9 +119,27 @@
                         <Insets bottom="10.0" left="15.0" />
                      </VBox.margin>
                   </Button>
+                  <Button fx:id="btnCustomer" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="65.0" prefWidth="208.0" styleClass="btnSupplier" stylesheets="@../style/style.css" text="Customer" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@../img/img_9.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Button>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane layoutX="13.0" layoutY="91.0" prefHeight="94.0" prefWidth="186.0" style="-fx-background-color: #4B4A56; -fx-background-radius: 20px;">
+                        <AnchorPane layoutX="11.0" layoutY="78.0" prefHeight="94.0" prefWidth="186.0" style="-fx-background-color: #4B4A56; -fx-background-radius: 20px;">
                            <children>
                               <Circle fill="#eaaaaa" layoutX="43.0" layoutY="47.0" radius="29.0" stroke="#714c4c" strokeType="OUTSIDE" strokeWidth="0.0" />
                               <Label fx:id="lblEmployeeName" layoutX="79.0" prefHeight="33.0" prefWidth="106.0" text="Inuka Asith" textFill="WHITE">

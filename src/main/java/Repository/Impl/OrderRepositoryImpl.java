@@ -41,12 +41,57 @@ public class OrderRepositoryImpl implements OrderRepository {
     public boolean addOrders(Orders orders) {
         try {
             Connection connection=DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO Orders(OrderID,OrderDate,OrderStatus) VALUES(?,?,?)");
-            preparedStatement.setObject(1,orders.getOrderId());
-            preparedStatement.setObject(2,orders.getOrderDate());
-            preparedStatement.setObject(3,orders.getOrderStatus());
+            PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO Orders(CustID,OrderID,OrderDate,OrderStatus) VALUES(?,?,?,?)");
+            preparedStatement.setObject(1,orders.getCustomerId());
+            preparedStatement.setObject(2,orders.getOrderId());
+            preparedStatement.setObject(3,orders.getOrderDate());
+            preparedStatement.setObject(4,orders.getOrderStatus());
 
             return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public ResultSet getAllPrepareOrder() {
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from orders where OrderStatus=?");
+            preparedStatement.setObject(1,"Preparing");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            return resultSet;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean deleteOrder(String orderId) {
+        try {
+            Connection connection=DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("delete from orders where OrderID=?");
+            preparedStatement.setObject(1,orderId);
+
+
+            return preparedStatement.executeUpdate()>0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean updateOrder(String orderId, String orderStatus) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement("UPDATE Orders SET OrderStatus=? WHERE OrderID=?");
+
+            preparedStatement.setObject(1,orderStatus);
+            preparedStatement.setObject(2,orderId);
+
+            return preparedStatement.executeUpdate() > 0;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

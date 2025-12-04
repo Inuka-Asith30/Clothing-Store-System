@@ -9,6 +9,7 @@ public interface EmployeeRepository{
     boolean addEmpDetails(Employee employee);
     boolean deleteEmpDetails(String employeeId);
     boolean updateEmpDetails(Employee employee);
-    ResultSet searchEmployee(String empId);
+    ResultSet searchEmployeeById(String empId);
     ResultSet getLastEmpID();
+    ResultSet searchEmployeeByEmail(String email);
 }

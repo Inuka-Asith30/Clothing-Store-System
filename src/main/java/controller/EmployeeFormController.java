@@ -212,7 +212,7 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void txtSearchOnAction(ActionEvent event) {
-        Employee employee = employeeService.searchEmployee(txtSearch.getText());
+        Employee employee = employeeService.searchEmployeeById(txtSearch.getText());
 
         employeeDetails.clear();
         employeeDetails.add(employee);
@@ -224,7 +224,7 @@ public class EmployeeFormController implements Initializable {
     @FXML
     void btnLoginAccessOnAction(ActionEvent event) {
         try {
-            loginAccessFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/SystemAccess.fxml"))));
+            loginAccessFormStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/SystemAccessForm.fxml"))));
             loginAccessFormStage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);

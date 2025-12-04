@@ -27,12 +27,12 @@ public class ProductRepositoryImpl implements ProductRepository {
     public boolean addDetails(Product product) {
         try {
             Connection connection=DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO Product(SupplierId,ProductId,ProductName,Category,PackSize,unitPrice,qtyOnHand) VALUES(?,?,?,?,?,?,?)");
+            PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO Product(SupplierId,ProductId,ProductName,Category,Size,unitPrice,qtyOnHand) VALUES(?,?,?,?,?,?,?)");
             preparedStatement.setObject(1,product.getSupplierId());
             preparedStatement.setObject(2,product.getProductId());
             preparedStatement.setObject(3,product.getProductName());
             preparedStatement.setObject(4,product.getCategory());
-            preparedStatement.setObject(5,product.getPackSize());
+            preparedStatement.setObject(5,product.getSize());
             preparedStatement.setObject(6,product.getUnitPrice());
             preparedStatement.setObject(7,product.getQtyOnHand());
 
@@ -65,7 +65,7 @@ public class ProductRepositoryImpl implements ProductRepository {
             preparedStatement.setObject(1,product.getSupplierId());
             preparedStatement.setObject(2,product.getProductName());
             preparedStatement.setObject(3,product.getCategory());
-            preparedStatement.setObject(4,product.getPackSize());
+            preparedStatement.setObject(4,product.getSize());
 
             preparedStatement.setObject(5,product.getUnitPrice());
             preparedStatement.setObject(6,product.getQtyOnHand());

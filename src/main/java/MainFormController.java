@@ -16,6 +16,9 @@ import java.util.ResourceBundle;
 public class MainFormController implements Initializable {
 
     @FXML
+    private Button btnCustomer;
+
+    @FXML
     private Button btnDashBoard;
 
     @FXML
@@ -44,6 +47,12 @@ public class MainFormController implements Initializable {
 
     private Pane view;
     private Pane orderView;
+
+    @FXML
+    void btnCustomerOnAction(ActionEvent event) throws IOException {
+        view=new FXMLLoader().load(getClass().getResource("/view/CustomerForm.fxml"));
+        mainPane.setCenter(view);
+    }
 
 
 
