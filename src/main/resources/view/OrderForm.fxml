@@ -146,13 +146,13 @@
                </opaqueInsets>
             </VBox>
             <Line endX="324.9999694824219" layoutX="21.0" layoutY="41.0" startX="-4.999992370605469" startY="-0.600006103515625" />
-            <Label layoutX="16.0" layoutY="14.0" prefHeight="26.0" prefWidth="170.0" text="For Customer Details">
+            <Label layoutX="16.0" layoutY="14.0" prefHeight="26.0" prefWidth="170.0" text="Customer Details">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
             <Line endX="324.9999694824219" layoutX="21.0" layoutY="141.0" startX="-4.999992370605469" startY="-0.600006103515625" />
-            <Label layoutX="16.0" layoutY="114.0" prefHeight="26.0" prefWidth="148.0" text="For Order Details">
+            <Label layoutX="16.0" layoutY="114.0" prefHeight="26.0" prefWidth="148.0" text="Order Details">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
