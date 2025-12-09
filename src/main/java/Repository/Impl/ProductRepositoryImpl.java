@@ -60,7 +60,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     public boolean updateDetails(Product product) {
         try {
             Connection connection=DBConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE product SET SupplierId=?,ProductName=?,Category=?,PackSize=?,UnitPrice=?,QtyOnHand=? WHERE ProductId=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE product SET SupplierId=?,ProductName=?,Category=?,Size=?,UnitPrice=?,QtyOnHand=? WHERE ProductId=?");
 
             preparedStatement.setObject(1,product.getSupplierId());
             preparedStatement.setObject(2,product.getProductName());

@@ -72,7 +72,9 @@ public class SendEmailForVerificationFormController {
 
     @FXML
     void btnBackToLoginOnAction(ActionEvent event) {
+
         Starter.loginFormstage.show();
+        LoginFormController.verificationFormStageStatic.close();
     }
 
 }

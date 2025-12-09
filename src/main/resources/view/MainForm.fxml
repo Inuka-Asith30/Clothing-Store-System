@@ -65,7 +65,7 @@
                         <Insets bottom="10.0" left="16.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="btnInventory" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnInventoryOnAction" prefHeight="62.0" prefWidth="208.0" styleClass="btnInventory" stylesheets="@../style/style2.css" text="Inventory" textFill="WHITE">
+                  <Button fx:id="btnInventory" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnInventoryOnAction" prefHeight="62.0" prefWidth="208.0" styleClass="btnInventory" stylesheets="@../style/style2.css" text="Product" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -164,6 +164,13 @@
                </children>
             </VBox>
          </left>
+         <center>
+            <ImageView fitHeight="739.0" fitWidth="822.0" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../../../../../Downloads/Gemini_Generated_Image_e8utt9e8utt9e8ut.png" />
+               </image>
+            </ImageView>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
