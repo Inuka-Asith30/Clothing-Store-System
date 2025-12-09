@@ -9,9 +9,9 @@ import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
 public class SendOtpThroughGmail {
-    private final String EMAIL_FROM = "";
+    private final String EMAIL_FROM = "inukaamarasiri@gmail.com";
 
-    private final String APP_PASSWORD = "";
+    private final String APP_PASSWORD = "ruka pkod jhfd sshk";
 
 
 

@@ -205,6 +205,9 @@ public class ProductFormController implements Initializable {
 
         lblDate.setText(GetDate.getDate());
 
+        ObservableList<String>  categoryList=FXCollections.observableArrayList("Mens-Fashion","Womens-Fashion");
+
+        cmbCategory.setItems(categoryList);
     }
 
     private void setSelectedValue(Product newValue) {

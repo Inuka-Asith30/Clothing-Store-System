@@ -15,8 +15,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="preparingBox" prefHeight="718.0" prefWidth="820.0" style="-fx-background-color: #f3f3f3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardFormController">
+<AnchorPane fx:id="preparingBox" prefHeight="718.0" prefWidth="820.0" style="-fx-background-color: #C2F1F1FF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardFormController">
    <children>
+
       <Label layoutX="37.0" layoutY="32.0" prefHeight="38.0" prefWidth="222.0" text="Dash Board" textFill="#373644">
          <font>
             <Font name="System Bold" size="40.0" />

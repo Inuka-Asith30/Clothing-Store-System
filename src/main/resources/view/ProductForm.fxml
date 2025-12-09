@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="718.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductFormController">
+<AnchorPane prefHeight="718.0" prefWidth="820.0" style="-fx-background-color: #C2F1F1FF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductFormController">
    <children>
       <Label layoutX="27.0" layoutY="19.0" prefHeight="66.0" prefWidth="198.0" text="Product" textFill="#373644">
          <font>
@@ -134,7 +134,7 @@
             </VBox>
             <VBox layoutX="401.0" layoutY="148.0" prefHeight="66.0" prefWidth="191.0">
                <children>
-                  <Label prefHeight="19.0" prefWidth="100.0" text="Pack Size" textFill="#373644">
+                  <Label prefHeight="19.0" prefWidth="100.0" text="Size" textFill="#373644">
                      <font>
                         <Font size="13.0" />
                      </font>

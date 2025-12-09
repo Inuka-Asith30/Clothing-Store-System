@@ -256,6 +256,9 @@ public class EmployeeFormController implements Initializable {
             }
         }));
 
+        ObservableList<String>  titleList=FXCollections.observableArrayList("Mr","Mrs","Miss");
+        cmbTitle.setItems(titleList);
+
         lblOrderDate.setText(GetDate.getDate());
     }
 
