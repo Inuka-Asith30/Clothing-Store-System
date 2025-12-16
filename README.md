@@ -9,6 +9,7 @@ CREATE TABLE employee(
         PhoneNumber VARCHAR(13),
 	CONSTRAINT PRIMARY KEY (EmpID)
 );
+/n
 INSERT INTO employee VALUES('E001','Mr','Danapala',40000,'No.20 Walana','Manager','danapala@gmail.com','0716680434');
 INSERT INTO employee VALUES('E002','Mr','Gunapala',40000,'No 200, Thalpitiya','Manager','Gunapala@gmail.com','0716680434');
 INSERT INTO employee VALUES('E003','Mr','Amarapala',34000,'No 100, Horawala','Manager','Amarapala@gmail.com','0716680434');
